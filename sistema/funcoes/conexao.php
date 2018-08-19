@@ -5,3 +5,4 @@ $usuario = 'root';
 $senha = '@atomic123';
 global $conn;
 $conn = new PDO("mysql:host=$servidor_mysql","$usuario","$senha");
+?>

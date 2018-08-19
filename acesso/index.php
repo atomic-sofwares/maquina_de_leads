@@ -1,5 +1,5 @@
 <?php
-    //require '../sistema/funcoes/sessao.php'
+    require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
