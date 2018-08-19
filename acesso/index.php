@@ -1,5 +1,5 @@
 <?php
-    //require '../sistema/funcoes/sessao.php'
+    require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -225,13 +225,13 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Meu Perfil</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+                               <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a> !-->
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Sair</a>
                         </div>
                     </div>
 
