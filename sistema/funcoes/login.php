@@ -8,8 +8,7 @@
 require 'funcoes.php';
 session_start();
 
-//alterados
-
+//este é o correto
 
 $user = strip_tags($_POST["email"]);
 $password = strip_tags($_POST["senha"]);
