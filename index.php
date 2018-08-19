@@ -1,3 +1,6 @@
 <?PHP
-require 'sistema/funcoes/sessao.php'
+require 'sistema/funcoes/sessao.php';
+
 ?>
+
+
