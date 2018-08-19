@@ -42,11 +42,12 @@ function func_buscar_usuario($email, $senha)
 {
     global $conn;
 
+
     $sql = "SELECT * FROM quero_sucesso.TB_Usuario 
     WHERE email ='" . $email . "' AND senha='" . $senha . "'";
     
     $sql_executar = $conn->prepare($sql);
-    $sql_executar = $sql_executar->execute();
+    $sql_executar->execute();
 
     return $sql_executar;
 }
