@@ -39,19 +39,19 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form action="../sistema/funcoes/login.php" method="post">
                         <div class="form-group">
                             <label>E-mail</label>
-                            <input type="email" class="form-control" placeholder="E-mail" required>
+                            <input type="email" name="email" class="form-control" placeholder="E-mail" required>
                         </div>
                         <div class="form-group">
                             <label>Senha</label>
-                            <input type="password" class="form-control" placeholder="Senha" required>
+                            <input type="password" name="senha" class="form-control" placeholder="Senha" required>
                         </div>
                         <div class="checkbox">
-                            <label>
+                            <!--<label>
                                 <input type="checkbox"> Lembrar-me
-                            </label>
+                            </label>!-->
                             <label class="pull-right">
                                 <a href="#">Esqueceu sua senha?</a>
                             </label>

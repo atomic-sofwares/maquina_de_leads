@@ -1,25 +1,26 @@
 <?php
 require 'conexao.php';
 
-echo 'teste';
 
-function func_inserir_usuario($dados){
+function func_inserir_usuario($dados)
+{
     global $conn;
 
     $sql = "INSERT INTO quero_sucesso.TB_Usuario 
         (usuario, senha, email, link_imagem )
-        VALUES ('".$dados['user']."','".$dados['senha']."','".$dados['email']."','".$dados['link_imagem']."')";
+        VALUES ('" . $dados['user'] . "','" . $dados['senha'] . "','" . $dados['email'] . "','" . $dados['link_imagem'] . "')";
 
-  
+
     $sql_executar = $conn->prepare($sql);
-    $sql_executar = $sql_executar-> execute();
+    $sql_executar = $sql_executar->execute();
     return $sql_executar;
 }
 
-function func_editar_usuario($user){
+function func_editar_usuario($user)
+{
     global $conn;
 
-    $sql = "SELECT * FROM quero_sucesso.TB_Usuario where usuario LIKE '%".$user."%'";
+    $sql = "SELECT * FROM quero_sucesso.TB_Usuario where usuario LIKE '%" . $user . "%'";
 
     $sql_executar = $conn->prepare($sql);
     $sql_executar = $sql_executar->execute();
@@ -37,13 +38,15 @@ function func_buscar_usuarios()
     return $sql_executar;
 }
 
-function func_buscar_usu()
+function func_buscar_usuario($email, $senha)
 {
     global $conn;
 
-    $sql = "SELECT * FROM quero_sucesso.TB_Usuario";
+    $sql = "SELECT * FROM quero_sucesso.TB_Usuario 
+    WHERE email ='" . $email . "' AND senha='" . $senha . "'";
 
     $sql_executar = $conn->prepare($sql);
-    $sql_executar = $sql_executar->execute();
+    $sql_executar->execute();
+
     return $sql_executar;
 }
