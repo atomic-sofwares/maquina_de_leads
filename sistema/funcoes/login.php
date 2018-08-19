@@ -8,6 +8,9 @@
 require 'funcoes.php';
 session_start();
 
+//alterados
+
+
 $user = strip_tags($_POST["email"]);
 $password = strip_tags($_POST["senha"]);
 $sql_usuario = func_buscar_usuario($user, $password);
@@ -19,6 +22,6 @@ if ($total == 1) {
     $_SESSION["userloggedon"] = true;
 
 } else {
-    echo "Password is not correct!";
+    echo "Senha ou usuário incorreto!";
 }
 ?>
