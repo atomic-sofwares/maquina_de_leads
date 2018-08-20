@@ -18,6 +18,7 @@ $sql_usuario = func_buscar_usuario($user, $password);
 //echo 'chegamos aqui';
 $total = $sql_usuario->rowCount();
 $dados = $sql_usuario->fetch();
+
 if ($total == 1) {
     $_SESSION["user_mql"] = $user;
     $_SESSION["user_mql_logado"] = true;
