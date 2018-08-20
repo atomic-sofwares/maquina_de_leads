@@ -22,8 +22,6 @@ if ($total == 1) {
     $_SESSION["user_mql"] = $user;
     $_SESSION["user_mql_logado"] = true;
     header("Refresh:0");
-    //header("Location: http://bmp2018.ddns.net");
-    //curl_init("http://bmp2018.ddns.net");
 
 } else {
     echo "Senha ou usuário incorreto!";
