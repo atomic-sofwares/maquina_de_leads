@@ -34,7 +34,7 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    Máquina de Leads
+                    <span>Máquina de Leads</span>
                 </div>
                 <div class="login-form">
                     <form action="../sistema/funcoes/login.php" method="POST">
@@ -63,7 +63,7 @@
                             </div>
                         </div>!-->
                         <div class="register-link m-t-15 text-center">
-                            <p>Já possui uma conta ? <a href="#"> Cadastre-se aqui</a></p>
+                            <p>Não possui uma conta ? <a href="page-register.php"> Cadastre-se aqui</a></p>
                         </div>
                     </form>
                 </div>

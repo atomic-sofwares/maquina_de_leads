@@ -7,12 +7,12 @@ function func_inserir_usuario($dados)
     global $conn;
 
     $sql = "INSERT INTO quero_sucesso.TB_Usuario 
-        (usuario, senha, email, link_imagem )
-        VALUES ('" . $dados['user'] . "','" . $dados['senha'] . "','" . $dados['email'] . "','" . $dados['link_imagem'] . "')";
+        (usuario, senha, email )
+        VALUES ('" . $dados['email'] . "','" . $dados['senha'] . "','" . $dados['email'] . "')";
 
 
     $sql_executar = $conn->prepare($sql);
-    $sql_executar = $sql_executar->execute();
+    $sql_executar->execute();
     return $sql_executar;
 }
 
@@ -36,6 +36,20 @@ function func_buscar_usuarios()
     $sql_executar = $conn->prepare($sql);
     $sql_executar = $sql_executar->execute();
     return $sql_executar;
+}
+
+function func_buscar_email($email){
+    global $conn;
+
+    $sql = "SELECT * FROM quero_sucesso.TB_Usuario 
+    WHERE email ='" . $email . "'";
+
+    $sql_executar = $conn->prepare($sql);
+    $sql_executar->execute();
+
+    $email_existente = $sql_executar->rowCount();
+
+   return $email_existente;
 }
 
 function func_buscar_usuario($email, $senha)

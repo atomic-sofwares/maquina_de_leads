@@ -19,13 +19,15 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+
+<!--    <link rel="stylesheet" href="assets/css/bootstrap-select.less">-->
+
     <link rel="stylesheet" href="assets/scss/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
 <body class="bg-dark">
 
@@ -34,28 +36,36 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.php">
-                        <img class="align-content" src="images/logo.png" alt="">
-                    </a>
+                    <span>Máquina de Leads</span>
                 </div>
                 <div class="login-form">
-                    <form>
-                        <div class="form-group">
-                            <label>Nome de usuário</label>
-                            <input type="email" class="form-control" placeholder="Nome de usuário" required>
-                        </div>
-                        <div class="form-group">
+                    <form id="formulario_cadastro">
+
+                        <div class="form-group row">
                             <label>E-mail</label>
-                            <input type="email" class="form-control" placeholder="E-mail" required>
+                            <input type="email" class="form-control" required name="email">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group row">
+                            <label>Confirme o e-mail</label>
+                            <input type="email" class="form-control" required name="confirma_email">
+                        </div>
+
+
+                        <div class="form-group row">
                             <label>Senha</label>
-                            <input type="password" class="form-control" placeholder="Senha" required>
+                            <input type="password" class="form-control" required name="senha">
                         </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Aceito os Termos e politicas
-                            </label>
+                        <div class="form-group row">
+                            <label>Confirme a senha</label>
+                            <input type="password" class="form-control" required name="confirma_senha">
+                        </div>
+
+<!--                        <div class="checkbox">-->
+<!--                            <label>-->
+<!--                                <input type="checkbox"> Aceito os Termos e politicas-->
+<!--                            </label>-->
+<!--                        </div>-->
+                        <div class="text-center" id="informacao">
                         </div>
                         <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Registrar</button>
                         <!--<div class="social-login-content">
@@ -64,10 +74,14 @@
                                 <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
                             </div>
                         </div>!-->
-                        <div class="register-link m-t-15 text-center">
-                            <p>Já possui uma conta? <a href="#"> Entrar</a></p>
+                        <div class="register-link m-t-15 text-center" style="margin-top:10px;">
+                            <p>Já possui uma conta? <a href="page-login.php"> Entrar</a></p>
                         </div>
                     </form>
+                <div style="display: none" id="sucesso">
+                        <h3>Usuário cadastrado com sucesso</h3>
+                        <img src="../images/sucesso.png">
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,6 +92,7 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="../js/cadastro_usuario.js"></script>
 
 
 </body>
