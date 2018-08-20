@@ -19,10 +19,11 @@ $sql_usuario = func_buscar_usuario($user, $password);
 $total = $sql_usuario->rowCount();
 $dados = $sql_usuario->fetch();
 if ($total == 1) {
-    $_SESSION["username"] = $user;
-    $_SESSION["userloggedon"] = true;
+    $_SESSION["user_mql"] = $user;
+    $_SESSION["user_mql_logado"] = true;
     header("Refresh:0");
-//    header("Location: acesso/index.php");
+    //header("Location: http://bmp2018.ddns.net");
+    //curl_init("http://bmp2018.ddns.net");
 
 } else {
     echo "Senha ou usuário incorreto!";
