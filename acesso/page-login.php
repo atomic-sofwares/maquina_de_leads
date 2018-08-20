@@ -62,7 +62,7 @@
                                 <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Sign in with twitter</button>
                             </div>
                         </div>!-->
-                        <div class="register-link m-t-15 text-center">
+                        <div class="register-link m-t-15 text-center" style="margin-top:10px;">
                             <p>Não possui uma conta ? <a href="page-register.php"> Cadastre-se aqui</a></p>
                         </div>
                     </form>
