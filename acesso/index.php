@@ -50,8 +50,8 @@ require '../sistema/funcoes/sessao.php'
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#">Máquina de Leads</a>
-            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+            <a class="navbar-brand" href="#"> <img src="../images/logo.png" alt="Logo" style="position: relative; width: 200px; height: 150px; margin-top: -10%; margin-bottom: -10%"></a>
+<!--            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>-->
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">

@@ -29,20 +29,20 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
-<body class="bg-dark">
+<body class="bg-dark" style="overflow: hidden;">
 
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo">
-                    <span>Máquina de Leads</span>
+                <div class="login-logo" style="margin-top: -22%; margin-bottom: -12%">
+                    <img src="../images/logo.png" alt="Logo" style="position: relative; width: 50%;">
                 </div>
                 <div class="login-form">
                     <form id="formulario_cadastro">
 
                         <div class="form-group row">
                             <label>E-mail</label>
-                            <input type="email" class="form-control" required name="email" style="border-color: #dc3545;">
+                            <input type="email" class="form-control" required name="email">
                         </div>
                         <div class="form-group row">
                             <label>Confirme o e-mail</label>
@@ -73,7 +73,7 @@
                                 <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
                             </div>
                         </div>!-->
-                        <div class="register-link m-t-15 text-center" style="margin-top:10px;">
+                        <div class="register-link m-t-15 text-center" style="margin-top:10px; margin-bottom: -3%">
                             <p>Já possui uma conta? <a href="page-login.php"> Entrar</a></p>
                         </div>
                     </form>
