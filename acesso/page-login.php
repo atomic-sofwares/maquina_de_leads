@@ -36,7 +36,7 @@
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo" style="margin-bottom: -15%; margin-top: -25%;">
+                <div class="login-logo" >
                     <img src="../images/logo.png" alt="Logo" style="position: relative; width: 80%;">
 <!--                        <span>Máquina de Leads</span>-->
                 </div>
