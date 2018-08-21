@@ -42,7 +42,7 @@
 
                         <div class="form-group row">
                             <label>E-mail</label>
-                            <input type="email" class="form-control" required name="email">
+                            <input type="email" class="form-control" required name="email" style="border-color: #dc3545;">
                         </div>
                         <div class="form-group row">
                             <label>Confirme o e-mail</label>
