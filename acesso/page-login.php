@@ -1,5 +1,5 @@
 <?php
-require '../sistema/funcoes/sessao.php'
+    require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -30,14 +30,14 @@ require '../sistema/funcoes/sessao.php'
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
-<body class="bg-dark">
+<body class="bg-dark" style="overflow: hidden;">
 
 
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo">
-                    <span>Máquina de Leads</span>
+                <div class="login-logo" style="margin-bottom: -15%; margin-top: -25%">
+                    <img src="../images/logo.png" alt="Logo" style="position: relative; width: 75%;">
                 </div>
                 <div class="login-form">
                     <form action="../sistema/funcoes/login.php" method="POST">
@@ -54,7 +54,7 @@ require '../sistema/funcoes/sessao.php'
                                 <input type="checkbox"> Lembrar-me
                             </label>
                             <label class="pull-right">
-                                <a href="#">Esqueceu sua senha?</a>
+                                <a href="pages-forget.php">Esqueceu sua senha?</a>
                             </label>
 
                         </div>
@@ -65,8 +65,9 @@ require '../sistema/funcoes/sessao.php'
                                 <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Sign in with twitter</button>
                             </div>
                         </div>!-->
-                        <div class="register-link m-t-15 text-center" style="margin-top:10px;">
-                            <p>Não possui uma conta ? <a href="page-register.php"> Cadastre-se aqui</a></p>
+
+                        <div class="register-link m-t-15 text-center" style="margin-top:20px;">
+                            <p>Não possui uma conta ? <a href="page-register.php"> Cadastre-se</a></p>
                         </div>
                     </form>
                 </div>
