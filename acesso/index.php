@@ -59,13 +59,15 @@ require '../sistema/funcoes/sessao.php'
                 <li class="active">
                     <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
-                <h3 class="menu-title">MENU</h3><!-- /.menu-title -->
-                <li><i class="dropdown-toggle menu-icon fa fa-laptop" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"></i><a href="ui-typgraphy.html">Perfil</a></li>
-                <li><a href="ui-typgraphy.html"><i class="fa fa-file-word-o"></i>Financeiro</a></li>
-                <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Meu Plano</a></li>
-                <li class="active">
-                    <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>AKI BRUNO </a>
+                <h3 class="menu-title">MENU</h3>
+                <li class="">
+                    <a href="page-myProfile.php"> <i class="menu-icon fa fa-dashboard"></i>Perfil </a>
+                </li>
+                <li class="">
+                    <a href="page-financial.php"> <i class="menu-icon fa fa-book"></i>Financeiro </a>
+                </li>
+                <li class="">
+                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Meu Plano </a>
                 </li>
                 <!--
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
