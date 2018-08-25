@@ -59,7 +59,7 @@
                     <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
                 <li class="">
-                    <a href="page-myProfile.php"> <i class="menu-icon fa fa-dashboard"></i>Perfil </a>
+                    <a href="page-myProfile.php"> <i class="menu-icon fa fa-user"></i>Perfil </a>
                 </li>
                 <li class="">
                     <a href="page-financial.php"> <i class="menu-icon fa fa-dollar"></i>Financeiro </a>
