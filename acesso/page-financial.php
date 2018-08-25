@@ -1,5 +1,4 @@
 <?php
-require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>
@@ -227,7 +226,8 @@ require '../sistema/funcoes/sessao.php'
         </div>
     </div>
 </div>
-<!-- Área para inserção de conteúdo --!>
+<!-- Área para inserção de conteúdo -->
+</body>
 
 <!-- Right Panel -->
 
