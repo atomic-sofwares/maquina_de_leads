@@ -1,4 +1,13 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: patrick
+ * Date: 25/08/18
+ * Time: 11:20
+ */
+?>
+
+<?php
 ?>
 <!doctype html>
 <!--[if lt IE 7]>
@@ -73,15 +82,16 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.php">Login</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.php">Register</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.php">Forget Pass</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
+                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
                     </ul>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
 </aside><!-- /#left-panel -->
+
 
 
 <!-- Right Panel -->
