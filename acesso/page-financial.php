@@ -227,6 +227,7 @@ require '../sistema/funcoes/sessao.php'
         </div>
     </div>
 </div>
+<!-- Área para inserção de conteúdo --!>
 
 <!-- Right Panel -->
 
