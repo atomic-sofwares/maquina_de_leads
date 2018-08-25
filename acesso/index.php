@@ -188,7 +188,7 @@ require '../sistema/funcoes/sessao.php'
 
                          <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a> !-->
 
-                        <a class="nav-link" id="logOut"><i class="fa fa-power -off"></i>Sair</a>
+                        <a class="nav-link" id="logOut"><i class="fa fa-power-off"></i>Sair</a>
                     </div>
                 </div>
 
