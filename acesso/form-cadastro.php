@@ -50,20 +50,30 @@
                             </div>
 
                             <div class="form-group row">
-                                <label>Data de Nascimento</label>
-                                <input type="date" class="form-control" name="data_nascimento">
+                                <div class="col" style="padding: 0;">
+                                    <label>Data de Nascimento</label>
+                                    <input type="date" class="form-control" id="data_nascimento" style="margim:0px; max-width: 95%; mim-width:90%">
+                                </div>
+
+                                <div class="col" style="padding: 0;">
+                                    <label>Sexo</label>
+                                    <select name="sexo" id="sexo" class="form-control" >
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group row">
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col" style="padding: 0;">
                                     <label>Telefone</label>
-                                    <input type="number" class="form-control" required name="telefone" placeholder="(27) 9 99999-9999">
+                                    <input type="tel" class="form-control" required name="telefone" placeholder="(27) 9 99999-9999" style="margim:0px; min-width: 90%; max-width: 98%;">
                                     <small class="form-text text-muted">Inserir apenas números</small>
                                 </div>
 
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col" style="padding-right: 0;">
                                     <label>Confirme o telefone</label>
-                                    <input type="number" class="form-control" required name="confirma_telefone" placeholder="(27) 9 99999-9999">
+                                    <input type="tel" class="form-control" required name="confirma_telefone" placeholder="(27) 9 99999-9999">
 
                                 </div>
                             </div>
