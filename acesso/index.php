@@ -53,8 +53,7 @@ require '../sistema/funcoes/sessao.php'
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#"> <img src="../images/logo.png" alt="Logo" style="position: relative; width: 200px; height: 150px; margin-top: -10%; margin-bottom: -10%"></a>
-            <a class="navbar-brand hidden" href="./"><img src="../images/logo.png" alt="Logo"></a>
+             <a class="navbar-brand " href="./"><img src="../images/logo.png" alt="Logo"></a>
         </div>
         <?php require_once 'menu_lateral.php'?>
 
@@ -172,6 +171,7 @@ require '../sistema/funcoes/sessao.php'
 <!--                        </div>-->
 <!--                    </div>-->
                 </div>
+                <a href="" class="logOut" id="logOut1"> <i class="menu-icon fa fa-power-off" id="logOut1"></i>Sair </a>
             </div>
 
             <div class="col-sm-5">
@@ -187,8 +187,8 @@ require '../sistema/funcoes/sessao.php'
                         <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
                          <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a> !-->
-
-                        <a class="nav-link" id="logOut"><i class="fa fa-power-off"></i>Sair</a>
+                        <a class="nav-link"  href="" id="logOut"><b>Sair</b></a>
+                        <a class="nav-link" id="logOut"><i id="logOut" class="fa fa-power-off"></i>Sair</a>
                     </div>
                 </div>
 

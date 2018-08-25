@@ -1,4 +1,4 @@
-$("#logOut").on("click", function () {
+$(".logOut").on("click", function () {
     //Post the form data serialized for the proper formatting
     $.post("../sistema/funcoes/sessao.php", {acao : 'sair'}
         //Get the response from process.php

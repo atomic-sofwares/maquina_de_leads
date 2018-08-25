@@ -23,7 +23,7 @@
             <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Meu Plano </a>
         </li>
         <li >
-            <a href="page-myPlan.php"> <i class="menu-icon fa fa-power-off" id="logOut"></i>Sair </a>
+            <a href="" class="logOut" id="logOut"> <i class="menu-icon fa fa-power-off" id="logOut"></i>Sair </a>
         </li>
 
     </ul>
