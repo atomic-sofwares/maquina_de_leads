@@ -56,27 +56,28 @@ require '../sistema/funcoes/sessao.php'
             <a class="navbar-brand" href="#"> <img src="../images/logo.png" alt="Logo" style="position: relative; width: 200px; height: 150px; margin-top: -10%; margin-bottom: -10%"></a>
             <a class="navbar-brand hidden" href="./"><img src="../images/logo.png" alt="Logo"></a>
         </div>
+        <?php require_once 'menu_lateral.php'?>
 
-        <div id="main-menu" class="main-menu collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                </li>
-                <li class="">
-                    <a href="page-myProfile.php"> <i class="menu-icon fa fa-user"></i>Perfil </a>
-                </li>
-                <li class="">
-                    <a href="page-financial.php"> <i class="menu-icon fa fa-dollar"></i>Financeiro </a>
-                </li>
-                <li class="">
-                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Meu Plano </a>
-                </li>
-                <li class="">
-                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-power-off" id="logOut"></i>Sair </a>
-                </li>
-
-            </ul>
-        </div><!-- /.navbar-collapse -->
+<!--        <div id="main-menu" class="main-menu collapse navbar-collapse">-->
+<!--            <ul class="nav navbar-nav">-->
+<!--                <li class="active">-->
+<!--                    <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>-->
+<!--                </li>-->
+<!--                <li class="">-->
+<!--                    <a href="page-myProfile.php"> <i class="menu-icon fa fa-user"></i>Perfil </a>-->
+<!--                </li>-->
+<!--                <li class="">-->
+<!--                    <a href="page-financial.php"> <i class="menu-icon fa fa-dollar"></i>Financeiro </a>-->
+<!--                </li>-->
+<!--                <li class="">-->
+<!--                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Meu Plano </a>-->
+<!--                </li>-->
+<!--                <li class="">-->
+<!--                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-power-off" id="logOut"></i>Sair </a>-->
+<!--                </li>-->
+<!---->
+<!--            </ul>-->
+<!--        </div><!-- /.navbar-collapse -->-->
     </nav>
 </aside><!-- /#left-panel -->
 
@@ -181,7 +182,7 @@ require '../sistema/funcoes/sessao.php'
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Meu Perfil</a>
+                        <a class="nav-link" href="#"><i class="fa fa-user"></i>Meu Perfil</a>
 
                         <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
