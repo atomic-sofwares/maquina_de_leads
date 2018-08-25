@@ -56,26 +56,19 @@
                 <li class="">
                     <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
-                <h3 class="menu-title">MENU</h3>
                 <li class="">
                     <a href="page-myProfile.php"> <i class="menu-icon fa fa-dashboard"></i>Perfil </a>
                 </li>
                 <li class="active">
-                    <a href="page-financial.php"> <i class="menu-icon fa fa-book"></i>Financeiro </a>
+                    <a href="page-financial.php"> <i class="menu-icon fa fa-dollar"></i>Financeiro </a>
                 </li>
                 <li class="">
                     <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Meu Plano </a>
                 </li>
-                <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.php">Login</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.php">Register</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.php">Forget Pass</a></li>
-                    </ul>
+                <li class="">
+                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-power-off" id="logOut"></i>Sair </a>
                 </li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
