@@ -21,7 +21,7 @@ $user_mql = $_SESSION['user_mql'];
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="<?= $img_perfil_mql?>" alt="User Avatar">
+                        <img class="align-self-center rounded-circle mr-3" style="width:50px; height:50px;"  src="<?= $img_perfil_mql?>" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">

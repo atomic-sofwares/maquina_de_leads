@@ -71,7 +71,7 @@ require '../sistema/funcoes/sessao.php'
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <strong style="float: left;">Dados Pessoais</strong>
-
+                        <!-- -->
                         <div class="col-2" id="editar_dados_pessoais"   style="max-height: 15px;float: right; margin-right: -10px">
                             <button id="editar_dados_pessoais"  type="button" style="float: right;margin-right: -10px" class="btn-outline-primary">
                                 <i id="editar_dados_pessoais"
