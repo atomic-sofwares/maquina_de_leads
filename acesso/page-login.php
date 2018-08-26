@@ -36,8 +36,8 @@
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo" style="margin-bottom: -15%; margin-top: -25%">
-                    <img src="../images/logo.png" alt="Logo" style="position: relative; width: 75%;">
+                <div class="login-logo" >
+                    <img src="../images/logo.png" alt="Logo" style="position: relative; width: 50%;">
                 </div>
                 <div class="login-form">
                     <form action="../sistema/funcoes/login.php" method="POST">

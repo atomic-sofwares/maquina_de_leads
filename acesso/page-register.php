@@ -29,12 +29,12 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
-<body class="bg-dark" style="overflow: hidden;">
+<body class="bg-dark">
 
-    <div class="sufee-login d-flex align-content-center flex-wrap">
+    <div class="sufee-login d-flex align-content-center flex-wrap" style="max-height: 100%">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo" style="margin-top: -22%; margin-bottom: -12%">
+                <div class="login-logo" style="margin-top: -7%;">
                     <img src="../images/logo.png" alt="Logo" style="position: relative; width: 50%;">
                 </div>
                 <div class="login-form">
