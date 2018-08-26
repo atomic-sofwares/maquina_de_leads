@@ -80,7 +80,7 @@ require '../sistema/funcoes/sessao.php'
         </div>
 
 
-        <?php require_once 'blocos_dash/bloco_visitas_por_page.php' ?>
+        <?php require_once 'blocos_dash/bloco_visitas_page_hoje.php' ?>
 
         <!--/.col-->
 

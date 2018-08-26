@@ -33,7 +33,7 @@ require '../sistema/funcoes/sessao.php'
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
-<!--    <link rel="stylesheet" href="../css/style.css">-->
+    <!--    <link rel="stylesheet" href="../css/style.css">-->
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
@@ -42,14 +42,14 @@ require '../sistema/funcoes/sessao.php'
 
 <!-- Left Panel -->
 
-<?php require_once 'menu_lateral.php'?>
+<?php require_once 'menu_lateral.php' ?>
 
 
 <!-- Right Panel -->
 
 <div id="right-panel" class="right-panel">
 
-    <?php require_once 'header.php'?>
+    <?php require_once 'header.php' ?>
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
@@ -71,9 +71,21 @@ require '../sistema/funcoes/sessao.php'
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <strong style="float: left;">Dados Pessoais</strong>
-                        <a href="#"  id="editar_dados_pessoais" style="float: right;"><i id="editar_dados_pessoais" class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>
-                        <a href="" id="cancelar_edicao_dados_pessoais" style="float: right; display: none;"><i class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
-                        <a href="" id="salvar_edicao_dados_pessoais" style="float: right; margin-right: 15px; display: none;"><i class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
+
+                        <div class="col-2" id="editar_dados_pessoais"   style="max-height: 15px;float: right; margin-right: -10px">
+                            <button id="editar_dados_pessoais"  type="button" style="float: right;margin-right: -10px" class="btn-outline-primary">
+                                <i id="editar_dados_pessoais"
+                                   class="menu-icon fa fa-pencil"></i>
+                                Editar
+                            </button>
+                        </div>
+<!--                        <a href="#" id="editar_dados_pessoais" style="float: right;"><i id="editar_dados_pessoais"-->
+<!--                                                                                        class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>-->
+                        <a href="" id="cancelar_edicao_dados_pessoais" style="float: right; display: none;"><i
+                                    class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
+                        <a href="" id="salvar_edicao_dados_pessoais"
+                           style="float: right; margin-right: 15px; display: none;"><i
+                                    class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
                     </div>
                 </div>
             </div>
@@ -82,7 +94,7 @@ require '../sistema/funcoes/sessao.php'
             <div class="card-body card-block">
 
                 <!-- formulario dados pessoais(#início) -->
-                <form id="formulario_cadastro_dados_pessoais" >
+                <form id="formulario_cadastro_dados_pessoais">
                     <div class="container" id="dados_pessoais">
 
                         <!--Nome e sobrenome-->
@@ -137,7 +149,8 @@ require '../sistema/funcoes/sessao.php'
                         <div class="form-group row" id="div_imagem">
                             <div class="col">
                                 <label for='imagem'>Imagem de perfil</label>
-                                <input type="file" class="form-control-file form_dados_pessoais" id="imagem" accept="image/*">
+                                <input type="file" class="form-control-file form_dados_pessoais" id="imagem"
+                                       accept="image/*">
                             </div>
                         </div>
 
@@ -149,7 +162,6 @@ require '../sistema/funcoes/sessao.php'
         </div><!-- Área (card) -- Dados pessoais (#fim)-->
 
 
-
         <!-- Área (card) --Endereço(#início)-->
         <div class="card" id="card_endereco">
             <div class="card-header">
@@ -157,8 +169,10 @@ require '../sistema/funcoes/sessao.php'
                     <div class="col-md-12 col-sm-12">
                         <strong style="float: left;">Endereço</strong>
                         <a href="#" id="editar_endereco" style="float: right; "><i class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>
-                        <a href="" id="cancelar_edicao_endereco" style="float: right; display: none;"><i class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
-                        <a href="" id="salvar_edicao_endereco" style="float: right; margin-right: 15px; display: none;"><i class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
+                        <a href="" id="cancelar_edicao_endereco" style="float: right; display: none;"><i
+                                    class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
+                        <a href="" id="salvar_edicao_endereco" style="float: right; margin-right: 15px; display: none;"><i
+                                    class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
                     </div>
                 </div>
             </div>
@@ -181,7 +195,7 @@ require '../sistema/funcoes/sessao.php'
                         <div class="form-group row">
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>País</label>
-                                <select class="form-control"  id="pais" disabled="">
+                                <select class="form-control" id="pais" disabled="">
                                     <option value="Brasil">Brasil</option>
                                 </select>
                             </div>
@@ -263,7 +277,6 @@ require '../sistema/funcoes/sessao.php'
     </div><!-- Área de cadastro (#fim)-->
 
 
-
 </body>
 
 <!-- Right Panel -->
@@ -279,7 +292,8 @@ require '../sistema/funcoes/sessao.php'
 <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
 <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
 <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="../js/dashboard.js"></script>
 
 </html>
