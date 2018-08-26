@@ -41,23 +41,7 @@ require '../sistema/funcoes/sessao.php'
 
 <!-- Left Panel -->
 
-
-<aside id="left-panel" class="left-panel">
-    <nav class="navbar navbar-expand-sm navbar-default">
-        <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
-                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="#"> <img src="../images/logo.png" alt="Logo" style="position: relative; width: 200px; height: 150px; margin-top: -10%; margin-bottom: -10%"></a>
-            <a class="navbar-brand hidden" href="./"><img src="../images/logo.png" alt="Logo"></a>
-        </div>
-
-        <?php require_once 'menu_lateral.php'?>
-
-
-    </nav>
-</aside><!-- /#left-panel -->
+<?php require_once 'menu_lateral.php'?>
 
 
 <!-- Right Panel -->
