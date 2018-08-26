@@ -1,4 +1,5 @@
 <?php
+require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>
@@ -199,6 +200,17 @@
             </div>
         </div>
     </div>
+
+    <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+    <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+        <input type="hidden" name="code" value="83AA97466E6E969AA4EACFA533712A1A" />
+        <input type="hidden" name="iot" value="button" />
+        <button type="button" class="btn btn-outline-primary"><i class="fa fa-star"></i>&nbsp; Primary</button>
+        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+    </form>
+    <script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+    <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
 </div>
 <!-- Área para inserção de conteúdo -->
 </body>

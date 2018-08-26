@@ -1,4 +1,5 @@
 <?php
+require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>

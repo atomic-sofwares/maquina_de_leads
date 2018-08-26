@@ -5,7 +5,7 @@
  * Date: 25/08/18
  * Time: 12:45
  */
-
+require '../sistema/funcoes/sessao.php'
 ?>
 <html>
 <div id="main-menu" class="main-menu collapse navbar-collapse">

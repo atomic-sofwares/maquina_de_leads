@@ -5,9 +5,14 @@ $hostname = $_SERVER['REQUEST_URI'];
 
 if (isset($_SESSION['user_mql']) && $_SESSION['user_mql'] != "") {
     //your contenct here
-    if ($hostname != '/acesso/index.php') {
+    //echo 'usuário já logado';
+    if ($hostname == '/index.php' || $hostname == '/acesso/page-login.php' || $hostname == '/sistema/funcoes/login.php') {
 
         header("Location: /acesso/index.php");
+
+    } else if ($hostname != '/acesso/index.php') {
+        //echo $hostname;
+        //header("Location: $hostname");
     }
 
 } else {
