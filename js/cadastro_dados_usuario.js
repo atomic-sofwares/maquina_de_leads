@@ -2,8 +2,9 @@ $(document).ready(function() {
     //Iniciar inputs apagados
     $('.form_dados_pessoais').prop('disabled', true);
     $('.form_endereco').prop('disabled', true);
+    //$('#div_imagem').css('display','none');
 
-    //Btn dados pessoais
+    //Btn dados pessoais(#início)
     $("#editar_dados_pessoais").on("click", function () {
         //Post the form data serialized for the proper formatting
         console.log("Editar dados pessoais");
@@ -27,9 +28,14 @@ $(document).ready(function() {
         $('#cancelar_edicao_dados_pessoais').css('display','none');
         $('#salvar_edicao_dados_pessoais').css('display','none');
 
+        $.post("../sistema/funcoes/cadastro_dados_usuario.php", {nome: #nome.val()}, function () {
+            console.log(#nome.val())
+        });
     });
+    //Btn dados pessoais(#fim)
 
-    //Btn endereço
+
+    //Botões endereço(#início)
     $("#editar_endereco").on("click", function () {
         //Post the form data serialized for the proper formatting
         console.log("Editar endereço");
@@ -46,7 +52,6 @@ $(document).ready(function() {
         $('#cancelar_edicao_endereco').css('display','none');
         $('#salvar_edicao_endereco').css('display','none');
 
-        //$('#card_dados_pessoais').css('display','inline');
     });
 
     $("#salvar_edicao_endereco").on("click", function () {
@@ -54,9 +59,8 @@ $(document).ready(function() {
         $('#cancelar_edicao_endereco').css('display','none');
         $('#salvar_edicao_endereco').css('display','none');
 
-       // $('#card_dados_pessoais').css('display','inline');
     });
-
+    //Botões endereço(#fim)
 
 
 

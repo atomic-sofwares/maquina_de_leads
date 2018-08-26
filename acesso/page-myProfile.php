@@ -33,6 +33,7 @@ require '../sistema/funcoes/sessao.php'
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
+<!--    <link rel="stylesheet" href="../css/style.css">-->
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
@@ -54,7 +55,7 @@ require '../sistema/funcoes/sessao.php'
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Dashboard</h1>
+                    <h1>Perfil</h1>
                 </div>
 
             </div>
@@ -115,7 +116,7 @@ require '../sistema/funcoes/sessao.php'
 
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control form_dados_pessoais" id="telefone" placeholder="(27) 9 99999-9999">
+                                <input type="tel" class="form-control form_dados_pessoais" id="telefone">
                                 <small class="form-text text-muted">Inserir apenas números</small>
                             </div>
 
@@ -131,6 +132,12 @@ require '../sistema/funcoes/sessao.php'
                             <div class="col-md-6 col-sm-12">
                                 <label>CPF</label>
                                 <input type="text" class="form-control form_dados_pessoais" id="cpf">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="div_imagem">
+                            <div class="col">
+                                <label for='imagem'>Imagem de perfil</label>
+                                <input type="file" class="form-control-file form_dados_pessoais" id="imagem" accept="image/*">
                             </div>
                         </div>
 
