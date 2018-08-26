@@ -27,7 +27,7 @@ require '../sistema/funcoes/sessao.php'
             <h4 class="mb-0">
                 <span class="count">400</span>
             </h4>
-            <p class="text-light">Members online</p>
+            <p class="text-light">Cadastros</p>
 
             <div class="chart-wrapper px-3" style="height:70px;" height="70">
                 <canvas id="widgetChart4"></canvas>

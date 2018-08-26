@@ -27,7 +27,7 @@ require '../sistema/funcoes/sessao.php'
             <h4 class="mb-0">
                 <span class="count">300</span>
             </h4>
-            <p class="text-light">Members online</p>
+            <p class="text-light">Cadastrados Hoje</p>
 
         </div>
 
