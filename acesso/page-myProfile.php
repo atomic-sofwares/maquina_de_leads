@@ -33,7 +33,7 @@ require '../sistema/funcoes/sessao.php'
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!--    <link rel="stylesheet" href="../css/style.css">-->
+    <link rel="stylesheet" href="../css/page-myProfile.css">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
@@ -69,24 +69,31 @@ require '../sistema/funcoes/sessao.php'
         <div class="card" id="card_dados_pessoais">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12">
+                    <div class="col">
                         <strong style="float: left;">Dados Pessoais</strong>
-                        <!-- -->
-                        <div class="col-2" id="editar_dados_pessoais"   style="max-height: 15px;float: right; margin-right: -10px">
-                            <button id="editar_dados_pessoais"  type="button" style="float: right;margin-right: -10px" class="btn-outline-primary">
-                                <i id="editar_dados_pessoais"
-                                   class="menu-icon fa fa-pencil"></i>
-                                Editar
-                            </button>
-                        </div>
-<!--                        <a href="#" id="editar_dados_pessoais" style="float: right;"><i id="editar_dados_pessoais"-->
-<!--                                                                                        class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>-->
-                        <a href="" id="cancelar_edicao_dados_pessoais" style="float: right; display: none;"><i
-                                    class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
-                        <a href="" id="salvar_edicao_dados_pessoais"
-                           style="float: right; margin-right: 15px; display: none;"><i
-                                    class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
                     </div>
+
+                    <div class="col div_btn_edicao" id="div_editar_dados_pessoais" style="float: right;">
+                        <button id="btn_editar_dados_pessoais"  type="button" class="btn-outline-secondary btns_edicao">
+                            <i id="btn_editar_dados_pessoais"
+                               class="menu-icon fa fa-pencil"></i>
+                            Editar
+                        </button>
+                    </div>
+
+                    <div class="col" id="div_btns_cancelar_salvar_edicao_dados_pessoais" style="float: right; display: none;">
+                        <button id="btn_cancelar_edicao_dados_pessoais"  type="button" class="btn-outline-danger btns_edicao">
+                            <i id="btn_cancelar_edicao_dados_pessoais"
+                               class="menu-icon fa fa-times"></i>
+                            Sair
+                        </button>
+                        <button id="btn_salvar_edicao_dados_pessoais"  type="submit" class="btn-outline-success btns_edicao" style="margin-right: 5%;">
+                            <i id="btn_salvar_edicao_dados_pessoais"
+                               class="menu-icon fa fa-check-square-o"></i>
+                            Salvar
+                        </button>
+                    </div>
+
                 </div>
             </div>
 
@@ -94,7 +101,7 @@ require '../sistema/funcoes/sessao.php'
             <div class="card-body card-block">
 
                 <!-- formulario dados pessoais(#início) -->
-                <form id="formulario_cadastro_dados_pessoais">
+                <form id="formulario_cadastro_dados_pessoais" name="formulario_cadastro_dados_pessoais">
                     <div class="container" id="dados_pessoais">
 
                         <!--Nome e sobrenome-->
@@ -143,7 +150,7 @@ require '../sistema/funcoes/sessao.php'
 
                             <div class="col-md-6 col-sm-12">
                                 <label>CPF</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="cpf">
+                                <input type="text" class="form-control form_dados_pessoais" id="cpf" name="cpf">
                             </div>
                         </div>
                         <div class="form-group row" id="div_imagem">
@@ -166,13 +173,29 @@ require '../sistema/funcoes/sessao.php'
         <div class="card" id="card_endereco">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <strong style="float: left;">Endereço</strong>
-                        <a href="#" id="editar_endereco" style="float: right; "><i class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>
-                        <a href="" id="cancelar_edicao_endereco" style="float: right; display: none;"><i
-                                    class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
-                        <a href="" id="salvar_edicao_endereco" style="float: right; margin-right: 15px; display: none;"><i
-                                    class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
+                    <div class="col">
+                        <strong style="float: left;">Endereco</strong>
+                    </div>
+
+                    <div class="col div_btn_edicao" id="div_btn_editar_endereco" style="float: right;">
+                        <button id="btn_editar_endereco"  type="button" class="btn-outline-secondary btns_edicao">
+                            <i id="btn_editar_endereco"
+                               class="menu-icon fa fa-pencil"></i>
+                            Editar
+                        </button>
+                    </div>
+
+                    <div class="col" id="div_btns_cancelar_salvar_edicao_endereco" style="float: right; display: none;">
+                        <button id="btn_cancelar_edicao_endereco"  type="button" class="btn-outline-danger btns_edicao">
+                            <i id="btn_cancelar_edicao_endereco"
+                               class="menu-icon fa fa-times"></i>
+                            Sair
+                        </button>
+                        <button id="btn_salvar_edicao_endereco"  type="submit" class="btn-outline-success btns_edicao" style="margin-right: 5%;">
+                            <i id="btn_salvar_edicao_endereco"
+                               class="menu-icon fa fa-check-square-o"></i>
+                            Salvar
+                        </button>
                     </div>
                 </div>
             </div>

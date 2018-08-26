@@ -24,6 +24,7 @@ if ($total == 1) {
 
     $_SESSION['img_perfil_mql'] = $dados['link_imagem'];
     $_SESSION["user_mql"] = $dados['usuario'];
+    $_SESSION["id_user_mql"] = $dados['id_usuario'];
     $_SESSION["user_mql_logado"] = true;
     echo '<pre>';
     //print_r($_SESSION);

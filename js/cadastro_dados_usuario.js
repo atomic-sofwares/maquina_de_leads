@@ -2,66 +2,76 @@ $(document).ready(function() {
     //Iniciar inputs apagados
     $('.form_dados_pessoais').prop('disabled', true);
     $('.form_endereco').prop('disabled', true);
-    //$('#div_imagem').css('display','none');
 
     //Btn dados pessoais(#início)
-    $("#editar_dados_pessoais").on("click", function () {
+    $('#btn_editar_dados_pessoais').click(function () {
         //Post the form data serialized for the proper formatting
         console.log("Editar dados pessoais");
-        $('#editar_dados_pessoais').css('display','none');
-        $('#cancelar_edicao_dados_pessoais').css('display','inline');
-        $('#salvar_edicao_dados_pessoais').css('display','inline');
+        $('#div_editar_dados_pessoais').css('display','none');
+        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display','inline');
 
-        $('#card_endereco').css('display','none');
         $('.form_dados_pessoais').prop('disabled', false); //Habilita os inputs de dados pessoais
     });
 
-    $("#cancelar_edicao_dados_pessoais").on("click", function () {
-        $('#editar_dados_pessoais').css('display','inline');
-        $('#cancelar_edicao_dados_pessoais').css('display','none');
-        $('#salvar_edicao_dados_pessoais').css('display','none');
+    $("#btn_cancelar_edicao_dados_pessoais").click(function () {
+        $('.form_dados_pessoais').prop('disabled', true); //Desabilita os inputs de dados pessoais
+
+        $('#div_editar_dados_pessoais').css('display','inline');
+        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display','none');
 
     });
 
-    $("#salvar_edicao_dados_pessoais").on("click", function () {
-        $('#editar_dados_pessoais').css('display','inline');
-        $('#cancelar_edicao_dados_pessoais').css('display','none');
-        $('#salvar_edicao_dados_pessoais').css('display','none');
+    $("#btn_salvar_edicao_dados_pessoais").click(function () {
+        $('.form_dados_pessoais').prop('disabled', true); //Desabilita os inputs de dados pessoais
 
-        $.post("../sistema/funcoes/cadastro_dados_usuario.php", {nome: #nome.val()}, function () {
-            console.log(#nome.val())
+        $('#div_editar_dados_pessoais').css('display','inline');
+        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display','none');
+
+        $json_dados_pessoais = {
+            nome: nome.value,
+            sobrenome: sobrenome.value,
+            cpf: cpf.value,
+            data_nascimento: data_nascimento.value,
+            rg: rg.value,
+            telefone: telefone.value,
+            sexo: sexo.value
+        }
+
+        $.post("../sistema/funcoes/cadastro_dados_usuario.php", $json_dados_pessoais, function (resposta) {
+            console.log(resposta)
         });
+
     });
     //Btn dados pessoais(#fim)
 
 
     //Botões endereço(#início)
-    $("#editar_endereco").on("click", function () {
+    $("#btn_editar_endereco").click(function () {
         //Post the form data serialized for the proper formatting
         console.log("Editar endereço");
-        $('#editar_endereco').css('display','none');
-        $('#cancelar_edicao_endereco').css('display','inline');
-        $('#salvar_edicao_endereco').css('display','inline');
+        $('#div_btn_editar_endereco').css('display','none');
+        $('#div_btns_cancelar_salvar_edicao_endereco').css('display','inline');
 
-        $('#card_dados_pessoais').css('display','none');
         $('.form_endereco').prop('disabled', false); //Habilita os inputs de endereço
     });
 
-    $("#cancelar_edicao_endereco").on("click", function () {
-        $('#editar_endereco').css('display','inline');
-        $('#cancelar_edicao_endereco').css('display','none');
-        $('#salvar_edicao_endereco').css('display','none');
+    $("#btn_cancelar_edicao_endereco").click(function () {
+        $('.form_endereco').prop('disabled', true); //Desabilita os inputs de endereço
 
+        $('#div_btn_editar_endereco').css('display','inline');
+        $('#div_btns_cancelar_salvar_edicao_endereco').css('display','none');
     });
 
-    $("#salvar_edicao_endereco").on("click", function () {
-        $('#editar_endereco').css('display','inline');
-        $('#cancelar_edicao_endereco').css('display','none');
-        $('#salvar_edicao_endereco').css('display','none');
+    $("#btn_salvar_edicao_endereco").click(function () {
+        $('.form_endereco').prop('disabled', true); //Desabilita os inputs de endereço
+
+        $('#div_btn_editar_endereco').css('display','inline');
+        $('#div_btns_cancelar_salvar_edicao_endereco').css('display','none');
+
+
 
     });
     //Botões endereço(#fim)
-
 
 
     //Preenchimento CEP
