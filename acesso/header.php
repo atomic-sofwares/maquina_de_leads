@@ -1,5 +1,7 @@
 <?php
-$img = $_SESSION['img_perfil_mql'];
+
+require '../sistema/funcoes/sessao.php';
+$user_mql = $_SESSION['user_mql'];
 
 ?>
 
@@ -19,13 +21,14 @@ $img = $_SESSION['img_perfil_mql'];
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="<?= $img?>" alt="User Avatar">
+                        <img class="user-avatar rounded-circle" src="<?= $img_perfil_mql?>" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="page-myProfile.php"><i class="fa fa-user"></i>Meu Perfil</a>
 
-                        <a href="" class="logOut" id="logOut1"> <i class="menu-icon fa fa-power-off" id="logOut1"></i>Sair </a>
+                        <a class="nav-link" href="page-myProfile.php"> <i class="menu-icon fa fa-user" id=""></i><?= " ".$user_mql ?></a>
+
+                        <a href="" class="nav-link logOut" id="logOut1"> <i class="menu-icon fa fa-power-off" id="logOut1"></i>_Sair </a>
                      </div>
                 </div>
 
