@@ -1,5 +1,66 @@
 $(document).ready(function() {
+    //Iniciar inputs apagados
+    $('.form_dados_pessoais').prop('disabled', true);
+    $('.form_endereco').prop('disabled', true);
 
+    //Btn dados pessoais
+    $("#editar_dados_pessoais").on("click", function () {
+        //Post the form data serialized for the proper formatting
+        console.log("Editar dados pessoais");
+        $('#editar_dados_pessoais').css('display','none');
+        $('#cancelar_edicao_dados_pessoais').css('display','inline');
+        $('#salvar_edicao_dados_pessoais').css('display','inline');
+
+        $('#card_endereco').css('display','none');
+        $('.form_dados_pessoais').prop('disabled', false); //Habilita os inputs de dados pessoais
+    });
+
+    $("#cancelar_edicao_dados_pessoais").on("click", function () {
+        $('#editar_dados_pessoais').css('display','inline');
+        $('#cancelar_edicao_dados_pessoais').css('display','none');
+        $('#salvar_edicao_dados_pessoais').css('display','none');
+
+    });
+
+    $("#salvar_edicao_dados_pessoais").on("click", function () {
+        $('#editar_dados_pessoais').css('display','inline');
+        $('#cancelar_edicao_dados_pessoais').css('display','none');
+        $('#salvar_edicao_dados_pessoais').css('display','none');
+
+    });
+
+    //Btn endereço
+    $("#editar_endereco").on("click", function () {
+        //Post the form data serialized for the proper formatting
+        console.log("Editar endereço");
+        $('#editar_endereco').css('display','none');
+        $('#cancelar_edicao_endereco').css('display','inline');
+        $('#salvar_edicao_endereco').css('display','inline');
+
+        $('#card_dados_pessoais').css('display','none');
+        $('.form_endereco').prop('disabled', false); //Habilita os inputs de endereço
+    });
+
+    $("#cancelar_edicao_endereco").on("click", function () {
+        $('#editar_endereco').css('display','inline');
+        $('#cancelar_edicao_endereco').css('display','none');
+        $('#salvar_edicao_endereco').css('display','none');
+
+        //$('#card_dados_pessoais').css('display','inline');
+    });
+
+    $("#salvar_edicao_endereco").on("click", function () {
+        $('#editar_endereco').css('display','inline');
+        $('#cancelar_edicao_endereco').css('display','none');
+        $('#salvar_edicao_endereco').css('display','none');
+
+       // $('#card_dados_pessoais').css('display','inline');
+    });
+
+
+
+
+    //Preenchimento CEP
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
         $("#rua").val("");
@@ -10,7 +71,7 @@ $(document).ready(function() {
     }
 
     //Quando o campo cep perde o foco.
-    $("#cep").change(function() {
+    $("#cep").blur(function() {
 
         //Nova variável "cep" somente com dígitos.
         var cep = $(this).val().replace(/\D/g, '');

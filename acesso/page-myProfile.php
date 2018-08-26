@@ -1,4 +1,5 @@
 <?php
+require '../sistema/funcoes/sessao.php'
 ?>
 <!doctype html>
 <!--[if lt IE 7]>
@@ -78,35 +79,50 @@
 
     <!-- Área de cadastro (#início)-->
     <div class="login-form">
-        <form id="formulario_cadastro_dados">
-            <!-- Área Dados Pessoais -->
-            <div class="card">
-                <div class="card-header"><strong>Dados Pessoais</strong></div>
-                <div class="card-body card-block">
+
+        <!-- Área (card)-- Dados pessoais(#início)-->
+        <div class="card" id="card_dados_pessoais">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <strong style="float: left;">Dados Pessoais</strong>
+                        <a href="#"  id="editar_dados_pessoais" style="float: right;"><i id="editar_dados_pessoais" class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>
+                        <a href="" id="cancelar_edicao_dados_pessoais" style="float: right; display: none;"><i class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
+                        <a href="" id="salvar_edicao_dados_pessoais" style="float: right; margin-right: 15px; display: none;"><i class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card-body -- Dados pessoais(#início)-->
+            <div class="card-body card-block">
+
+                <!-- formulario dados pessoais(#início) -->
+                <form id="formulario_cadastro_dados_pessoais" >
                     <div class="container" id="dados_pessoais">
+
                         <!--Nome e sobrenome-->
                         <div class="form-group row">
-                            <div class="form-group col-md-6 col-sm-12">
+                            <div class="form-group col-md-6 col-sm-12 ">
                                 <label>Nome</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control form_dados_pessoais" id="nome">
                             </div>
 
                             <div class="col-md-6 col-sm-12">
                                 <label>Sobrenome</label>
-                                <input type="text" class="form-control" id="sobrenome">
+                                <input type="text" class="form-control form_dados_pessoais" id="sobrenome">
                             </div>
                         </div>
 
                         <!--Data de nascimento, sexo e tel-->
                         <div class="form-group row">
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
-                                <label>Data de Nascimento</label>
-                                <input type="date" class="form-control" id="data_nascimento" placeholder="01/01/2001">
+                                <label>Nascimento</label>
+                                <input type="date" class="form-control form_dados_pessoais" id="data_nascimento">
                             </div>
 
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Sexo</label>
-                                <select class="form-control" id="sexo">
+                                <select class="form-control form_dados_pessoais" id="sexo">
                                     <option value=""></option>
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
@@ -115,7 +131,7 @@
 
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control" id="telefone" placeholder="(27) 9 99999-9999">
+                                <input type="tel" class="form-control form_dados_pessoais" id="telefone" placeholder="(27) 9 99999-9999">
                                 <small class="form-text text-muted">Inserir apenas números</small>
                             </div>
 
@@ -125,29 +141,48 @@
                         <div class="form-group row">
                             <div class="form-group col-md-6 col-sm-12">
                                 <label>RG</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control form_dados_pessoais" id="rg">
                             </div>
 
                             <div class="col-md-6 col-sm-12">
                                 <label>CPF</label>
-                                <input type="text" class="form-control" id="cpf">
+                                <input type="text" class="form-control form_dados_pessoais" id="cpf">
                             </div>
                         </div>
 
                     </div>
+                </form><!-- formulario dados pessoais(#fim) -->
+
+            </div><!-- card-body -- Dados pessoais(#fim)-->
+
+        </div><!-- Área (card) -- Dados pessoais (#fim)-->
+
+
+
+        <!-- Área (card) --Endereço(#início)-->
+        <div class="card" id="card_endereco">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <strong style="float: left;">Endereço</strong>
+                        <a href="#" id="editar_endereco" style="float: right; "><i class="menu-icon fa fa-pencil">&nbsp;Editar</i></a>
+                        <a href="" id="cancelar_edicao_endereco" style="float: right; display: none;"><i class="menu-icon fa fa-times">&nbsp;Cancelar</i></a>
+                        <a href="" id="salvar_edicao_endereco" style="float: right; margin-right: 15px; display: none;"><i class="menu-icon fa fa-check-square-o">&nbsp;Salvar</i></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Área endereço -->
-            <div class="card" style="margin-top: ">
-                <div class="card-header"><strong>Endereço</strong></div>
-                <div class="card-body card-block">
+            <!-- card-body -- Endereço(#início)-->
+            <div class="card-body card-block">
+
+                <!-- formulario endereço(#início) -->
+                <form id="formulario_cadastro_endereco">
                     <div class="container">
                         <!--CEP-->
                         <div class="form-group row">
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <label>CEP</label>
-                                <input type="tel" class="form-control" id="cep">
+                                <input type="tel" class="form-control form_endereco" id="cep">
                             </div>
                         </div>
 
@@ -156,186 +191,13 @@
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>País</label>
                                 <select class="form-control"  id="pais" disabled="">
-                                    <option value="África do Sul">África do Sul</option>
-                                    <option value="Albânia">Albânia</option>
-                                    <option value="Alemanha">Alemanha</option>
-                                    <option value="Andorra">Andorra</option>
-                                    <option value="Angola">Angola</option>
-                                    <option value="Anguilla">Anguilla</option>
-                                    <option value="Antigua">Antigua</option>
-                                    <option value="Arábia Saudita">Arábia Saudita</option>
-                                    <option value="Argentina">Argentina</option>
-                                    <option value="Armênia">Armênia</option>
-                                    <option value="Aruba">Aruba</option>
-                                    <option value="Austrália">Austrália</option>
-                                    <option value="Áustria">Áustria</option>
-                                    <option value="Azerbaijão">Azerbaijão</option>
-                                    <option value="Bahamas">Bahamas</option>
-                                    <option value="Bahrein">Bahrein</option>
-                                    <option value="Bangladesh">Bangladesh</option>
-                                    <option value="Barbados">Barbados</option>
-                                    <option value="Bélgica">Bélgica</option>
-                                    <option value="Benin">Benin</option>
-                                    <option value="Bermudas">Bermudas</option>
-                                    <option value="Botsuana">Botsuana</option>
-                                    <option value="Brasil" selected>Brasil</option>
-                                    <option value="Brunei">Brunei</option>
-                                    <option value="Bulgária">Bulgária</option>
-                                    <option value="Burkina Fasso">Burkina Fasso</option>
-                                    <option value="botão">botão</option>
-                                    <option value="Cabo Verde">Cabo Verde</option>
-                                    <option value="Camarões">Camarões</option>
-                                    <option value="Camboja">Camboja</option>
-                                    <option value="Canadá">Canadá</option>
-                                    <option value="Cazaquistão">Cazaquistão</option>
-                                    <option value="Chade">Chade</option>
-                                    <option value="Chile">Chile</option>
-                                    <option value="China">China</option>
-                                    <option value="Cidade do Vaticano">Cidade do Vaticano</option>
-                                    <option value="Colômbia">Colômbia</option>
-                                    <option value="Congo">Congo</option>
-                                    <option value="Coréia do Sul">Coréia do Sul</option>
-                                    <option value="Costa do Marfim">Costa do Marfim</option>
-                                    <option value="Costa Rica">Costa Rica</option>
-                                    <option value="Croácia">Croácia</option>
-                                    <option value="Dinamarca">Dinamarca</option>
-                                    <option value="Djibuti">Djibuti</option>
-                                    <option value="Dominica">Dominica</option>
-                                    <option value="EUA">EUA</option>
-                                    <option value="Egito">Egito</option>
-                                    <option value="El Salvador">El Salvador</option>
-                                    <option value="Emirados Árabes">Emirados Árabes</option>
-                                    <option value="Equador">Equador</option>
-                                    <option value="Eritréia">Eritréia</option>
-                                    <option value="Escócia">Escócia</option>
-                                    <option value="Eslováquia">Eslováquia</option>
-                                    <option value="Eslovênia">Eslovênia</option>
-                                    <option value="Espanha">Espanha</option>
-                                    <option value="Estônia">Estônia</option>
-                                    <option value="Etiópia">Etiópia</option>
-                                    <option value="Fiji">Fiji</option>
-                                    <option value="Filipinas">Filipinas</option>
-                                    <option value="Finlândia">Finlândia</option>
-                                    <option value="França">França</option>
-                                    <option value="Gabão">Gabão</option>
-                                    <option value="Gâmbia">Gâmbia</option>
-                                    <option value="Gana">Gana</option>
-                                    <option value="Geórgia">Geórgia</option>
-                                    <option value="Gibraltar">Gibraltar</option>
-                                    <option value="Granada">Granada</option>
-                                    <option value="Grécia">Grécia</option>
-                                    <option value="Guadalupe">Guadalupe</option>
-                                    <option value="Guam">Guam</option>
-                                    <option value="Guatemala">Guatemala</option>
-                                    <option value="Guiana">Guiana</option>
-                                    <option value="Guiana Francesa">Guiana Francesa</option>
-                                    <option value="Guiné-bissau">Guiné-bissau</option>
-                                    <option value="Haiti">Haiti</option>
-                                    <option value="Holanda">Holanda</option>
-                                    <option value="Honduras">Honduras</option>
-                                    <option value="Hong Kong">Hong Kong</option>
-                                    <option value="Hungria">Hungria</option>
-                                    <option value="Iêmen">Iêmen</option>
-                                    <option value="Ilhas Cayman">Ilhas Cayman</option>
-                                    <option value="Ilhas Cook">Ilhas Cook</option>
-                                    <option value="Ilhas Curaçao">Ilhas Curaçao</option>
-                                    <option value="Ilhas Marshall">Ilhas Marshall</option>
-                                    <option value="Ilhas Turks & Caicos">Ilhas Turks & Caicos</option>
-                                    <option value="Ilhas Virgens (brit.)">Ilhas Virgens (brit.)</option>
-                                    <option value="Ilhas Virgens(amer.)">Ilhas Virgens(amer.)</option>
-                                    <option value="Ilhas Wallis e Futuna">Ilhas Wallis e Futuna</option>
-                                    <option value="Índia">Índia</option>
-                                    <option value="Indonésia">Indonésia</option>
-                                    <option value="Inglaterra">Inglaterra</option>
-                                    <option value="Irlanda">Irlanda</option>
-                                    <option value="Islândia">Islândia</option>
-                                    <option value="Israel">Israel</option>
-                                    <option value="Itália">Itália</option>
-                                    <option value="Jamaica">Jamaica</option>
-                                    <option value="Japão">Japão</option>
-                                    <option value="Jordânia">Jordânia</option>
-                                    <option value="Kuwait">Kuwait</option>
-                                    <option value="Latvia">Latvia</option>
-                                    <option value="Líbano">Líbano</option>
-                                    <option value="Liechtenstein">Liechtenstein</option>
-                                    <option value="Lituânia">Lituânia</option>
-                                    <option value="Luxemburgo">Luxemburgo</option>
-                                    <option value="Macau">Macau</option>
-                                    <option value="Macedônia">Macedônia</option>
-                                    <option value="Madagascar">Madagascar</option>
-                                    <option value="Malásia">Malásia</option>
-                                    <option value="Malaui">Malaui</option>
-                                    <option value="Mali">Mali</option>
-                                    <option value="Malta">Malta</option>
-                                    <option value="Marrocos">Marrocos</option>
-                                    <option value="Martinica">Martinica</option>
-                                    <option value="Mauritânia">Mauritânia</option>
-                                    <option value="Mauritius">Mauritius</option>
-                                    <option value="México">México</option>
-                                    <option value="Moldova">Moldova</option>
-                                    <option value="Mônaco">Mônaco</option>
-                                    <option value="Montserrat">Montserrat</option>
-                                    <option value="Nepal">Nepal</option>
-                                    <option value="Nicarágua">Nicarágua</option>
-                                    <option value="Niger">Niger</option>
-                                    <option value="Nigéria">Nigéria</option>
-                                    <option value="Noruega">Noruega</option>
-                                    <option value="Nova Caledônia">Nova Caledônia</option>
-                                    <option value="Nova Zelândia">Nova Zelândia</option>
-                                    <option value="Omã">Omã</option>
-                                    <option value="Palau">Palau</option>
-                                    <option value="Panamá">Panamá</option>
-                                    <option value="Papua-nova Guiné">Papua-nova Guiné</option>
-                                    <option value="Paquistão">Paquistão</option>
-                                    <option value="Peru">Peru</option>
-                                    <option value="Polinésia Francesa">Polinésia Francesa</option>
-                                    <option value="Polônia">Polônia</option>
-                                    <option value="Porto Rico">Porto Rico</option>
-                                    <option value="Portugal">Portugal</option>
-                                    <option value="Qatar">Qatar</option>
-                                    <option value="Quênia">Quênia</option>
-                                    <option value="Rep. Dominicana">Rep. Dominicana</option>
-                                    <option value="Rep. Tcheca">Rep. Tcheca</option>
-                                    <option value="Reunion">Reunion</option>
-                                    <option value="Romênia">Romênia</option>
-                                    <option value="Ruanda">Ruanda</option>
-                                    <option value="Rússia">Rússia</option>
-                                    <option value="Saipan">Saipan</option>
-                                    <option value="Samoa Americana">Samoa Americana</option>
-                                    <option value="Senegal">Senegal</option>
-                                    <option value="Serra Leone">Serra Leone</option>
-                                    <option value="Seychelles">Seychelles</option>
-                                    <option value="Singapura">Singapura</option>
-                                    <option value="Síria">Síria</option>
-                                    <option value="Sri Lanka">Sri Lanka</option>
-                                    <option value="St. Kitts & Nevis">St. Kitts & Nevis</option>
-                                    <option value="St. Lúcia">St. Lúcia</option>
-                                    <option value="St. Vincent">St. Vincent</option>
-                                    <option value="Sudão">Sudão</option>
-                                    <option value="Suécia">Suécia</option>
-                                    <option value="Suiça">Suiça</option>
-                                    <option value="Suriname">Suriname</option>
-                                    <option value="Tailândia">Tailândia</option>
-                                    <option value="Taiwan">Taiwan</option>
-                                    <option value="Tanzânia">Tanzânia</option>
-                                    <option value="Togo">Togo</option>
-                                    <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-                                    <option value="Tunísia">Tunísia</option>
-                                    <option value="Turquia">Turquia</option>
-                                    <option value="Ucrânia">Ucrânia</option>
-                                    <option value="Uganda">Uganda</option>
-                                    <option value="Uruguai">Uruguai</option>
-                                    <option value="Venezuela">Venezuela</option>
-                                    <option value="Vietnã">Vietnã</option>
-                                    <option value="Zaire">Zaire</option>
-                                    <option value="Zâmbia">Zâmbia</option>
-                                    <option value="Zimbábue">Zimbábue</option>
+                                    <option value="Brasil">Brasil</option>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Estado</label>
-                                <select class="form-control" id="estado">
+                                <select class="form-control form_endereco   " id="estado">
                                     <option value="">Selecione</option>
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
@@ -369,7 +231,7 @@
 
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Cidade</label>
-                                <input type="text" class="form-control" id="cidade">
+                                <input type="text" class="form-control form_endereco" id="cidade">
                             </div>
 
                         </div>
@@ -378,36 +240,36 @@
                         <div class="form-group row">
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <label>Bairro</label>
-                                <input type="tel" class="form-control" id="bairro">
+                                <input type="tel" class="form-control form_endereco" id="bairro">
                             </div>
 
                             <div class="form-group col-md-6 col-sm-4 col-lg-6">
                                 <label>Rua</label>
-                                <input type="text" class="form-control" id="rua">
+                                <input type="text" class="form-control form_endereco" id="rua">
                             </div>
 
                             <div class="form-group col-md-2 col-sm-4 col-lg-2">
                                 <label>Número</label>
-                                <input type="number" class="form-control" id="numero">
+                                <input type="number" class="form-control form_endereco" id="numero">
                             </div>
-
                         </div>
 
-                        <!--Rua, complemento, número-->
+                        <!--Complemento-->
                         <div class="form-group row">
                             <div class="form-group col-md12 col-sm-12 col-lg-12">
                                 <label>Complemento</label>
-                                <input type="text" class="form-control" id="complemento">
+                                <input type="text" class="form-control form_endereco" id="complemento">
                             </div>
                         </div>
 
                     </div>
-                </div>
-            </div>
-        </form>
+                </form><!-- formulario endereço(#fim) -->
 
-        <!-- Área de cadastro (#Fim)-->
-    </div>
+            </div> <!-- card-body -- Endereço(#fim)-->
+
+        </div> <!-- Área (card) --Endereço(#fim)-->
+
+    </div><!-- Área de cadastro (#fim)-->
 
 
 
@@ -422,33 +284,11 @@
 <script src="../js/cadastro_dados_usuario.js"></script>
 
 
-<script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-<script src="assets/js/dashboard.js"></script>
-<script src="assets/js/widgets.js"></script>
 <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
 <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
 <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
 <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="../js/dashboard.js"></script>
-
-<script>
-    (function ($) {
-        "use strict";
-
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: null,
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#1de9b6',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#1de9b6', '#03a9f5'],
-            normalizeFunction: 'polynomial'
-        });
-    })(jQuery);
-</script>
 
 </html>
