@@ -20,8 +20,8 @@
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="page-myProfile.php"><i class="fa fa-user"></i>Meu Perfil</a>
 
-                        <a class="nav-link logOut"><i class="fa fa-power -off"></i>Sair</a>
-                    </div>
+                        <a href="" class="logOut" id="logOut1"> <i class="menu-icon fa fa-power-off" id="logOut1"></i>Sair </a>
+                     </div>
                 </div>
 
 
