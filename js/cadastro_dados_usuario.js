@@ -83,6 +83,21 @@ $('body').on('submit', '#formulario_dados_pessoais', function (e) {
     });
 });
 
+$('body').on('submit', '#formulario_dados_pessoais_update', function (e) {
+    //impedi o submit automático
+    e.preventDefault();
+
+    //chamo pelo método post
+    $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
+        if (data == 0) {
+            alert('Erro ao registrar dados!')
+        }
+        else {
+            alert('Dados registrados com sucesso!');
+            location.reload();
+        }
+    });
+});
 
 function alterna_edicao(acao) {
     if (acao == 'habilitar_pessoais') {

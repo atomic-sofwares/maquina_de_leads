@@ -5,6 +5,8 @@ require '../sistema/funcoes/funcoes.php';
 $sql_dados_pessoais = func_buscar_dados_pessoais($_SESSION['id_user_mql']);
 $dados_pessoais = $sql_dados_pessoais->fetchAll(PDO::FETCH_ASSOC)[0];
 
+$total = $sql_dados_pessoais->rowCount();
+
 ?>
 <!doctype html>
 <!--[if lt IE 7]>
@@ -70,7 +72,7 @@ $dados_pessoais = $sql_dados_pessoais->fetchAll(PDO::FETCH_ASSOC)[0];
     <!-- Área de cadastro (#início)-->
     <div class="login-form">
         <!-- formulario dados pessoais(#início) -->
-        <form id="formulario_dados_pessoais">
+        <form id="<?= $total>0 ? 'formulario_dados_pessoais_update':'formulario_dados_pessoais'  ?>">
             <!-- Área (card)-- Dados pessoais(#início)-->
             <div class="card" id="card_dados_pessoais">
                 <div class="card-header">
@@ -110,7 +112,7 @@ $dados_pessoais = $sql_dados_pessoais->fetchAll(PDO::FETCH_ASSOC)[0];
 
                     <div class="container" id="dados_pessoais">
 
-                        <input type="hidden" value="dados_pessoais" name="acao">
+                        <input type="hidden" value="<?= $total>0 ? 'dados_pessoais_update':'dados_pessoais'  ?>" name="acao">
                         <input type="hidden" value="<?= $_SESSION['id_user_mql'] ?>" name="id_usuario">
 
                         <!--Nome e sobrenome-->

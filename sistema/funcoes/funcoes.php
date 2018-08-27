@@ -31,6 +31,10 @@ function func_inserir_dados_pessoais($dados)
     return $sql_executar;
 }
 
+function func_inserir_dados_pessoais_update($dados){
+
+}
+
 function func_inserir_dados_endereco($dados)
 {
     global $conn;

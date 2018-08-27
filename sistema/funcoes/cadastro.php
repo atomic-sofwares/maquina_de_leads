@@ -13,6 +13,10 @@ require 'funcoes.php';
 $acao = $_POST['acao'];
 
 switch ($acao) {
+    case 'dados_pessoais_update':
+        func_inserir_dados_pessoais_update($_POST);
+        echo '1';
+        break;
 
     case 'dados_pessoais':
         func_inserir_dados_pessoais($_POST);
