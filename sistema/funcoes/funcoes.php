@@ -38,7 +38,7 @@ function func_inserir_dados_endereco($dados)
 
     $sql = "INSERT INTO quero_sucesso.TB_Endereco
         (cidade, estado, pais, rua , complemento, cep, numero, bairro, id_usuario)
-        VALUES ('" . $dados['cidade'] . "','" . $dados['estado'] . "','" . $dados['pais'] . "','" . $dados['rua'] . "','" . $dados['complemento']. "','" . $dados['cep'] . "','" . $dados['numero'] . "','" . $dados['bairro'] . "','" . $dados['id_usuario'] . "')";
+        VALUES ('" . $dados['cidade'] . "','" . $dados['estado'] . "','" . $dados['pais'] . "','" . $dados['rua'] . "','" . $dados['complemento'] . "','" . $dados['cep'] . "','" . $dados['numero'] . "','" . $dados['bairro'] . "','" . $dados['id_usuario'] . "')";
 
     $sql_executar = $conn->prepare($sql);
     $sql_executar->execute();
@@ -124,4 +124,17 @@ function func_buscar_id_usuario($id_usuario, $tabela)
     $email_existente = $sql_executar->rowCount();
 
     return $email_existente;
+}
+
+function func_buscar_dados_pessoais($id_usuario)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM quero_sucesso.TB_Dados_Pessoais
+    WHERE id_usuario ='" . $id_usuario . "'";
+
+    $sql_executar = $conn->prepare($sql);
+    $sql_executar->execute();
+
+    return $sql_executar;
 }

@@ -1,5 +1,10 @@
 <?php
-require '../sistema/funcoes/sessao.php'
+require '../sistema/funcoes/sessao.php';
+require '../sistema/funcoes/funcoes.php';
+
+$sql_dados_pessoais = func_buscar_dados_pessoais($_SESSION['id_user_mql']);
+$dados_pessoais = $sql_dados_pessoais->fetchAll(PDO::FETCH_ASSOC)[0];
+
 ?>
 <!doctype html>
 <!--[if lt IE 7]>
@@ -112,12 +117,12 @@ require '../sistema/funcoes/sessao.php'
                         <div class="form-group row">
                             <div class="form-group col-md-6 col-sm-12 ">
                                 <label>Nome</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="nome" name="nome" required>
+                                <input type="text" class="form-control form_dados_pessoais" id="nome" name="nome" value="<?= $dados_pessoais['nome'] ?>" required>
                             </div>
 
                             <div class="col-md-6 col-sm-12">
                                 <label>Sobrenome</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="sobrenome"
+                                <input type="text" class="form-control form_dados_pessoais" id="sobrenome" value="<?= $dados_pessoais['sobrenome'] ?>"
                                        name="sobrenome" required>
                             </div>
                         </div>
