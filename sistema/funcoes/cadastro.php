@@ -10,16 +10,34 @@ require 'funcoes.php';
 //este é o correto
 
 
+$acao = $_POST['acao'];
 
-if ($_POST["email"] == $_POST["confirma_email"] and $_POST["senha"] == $_POST["confirma_senha"]){
+switch ($acao) {
 
-    $sql_usuario = func_buscar_email($_POST["email"]);
-
-    if ($sql_usuario == 0) {
-        func_inserir_usuario($_POST);
+    case 'dados_pessoais':
+        func_inserir_dados_pessoais($_POST);
         echo '1';
-    } else {
-        echo '0';
-    }
+        break;
+    case 'novo_usuario':
+        if ($_POST["email"] == $_POST["confirma_email"] and $_POST["senha"] == $_POST["confirma_senha"]) {
+
+            $sql_usuario = func_buscar_email($_POST["email"]);
+
+            if ($sql_usuario == 0) {
+                func_inserir_usuario($_POST);
+                echo '1';
+            } else {
+                echo '0';
+            }
+        }
+
+        break;
+
+    case 'dados_endereco':
+        func_inserir_dados_endereco($_POST);
+        echo'1';
+        break;
 }
+
+
 ?>

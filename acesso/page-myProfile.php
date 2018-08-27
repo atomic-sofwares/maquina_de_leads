@@ -64,56 +64,61 @@ require '../sistema/funcoes/sessao.php'
 
     <!-- Área de cadastro (#início)-->
     <div class="login-form">
+        <!-- formulario dados pessoais(#início) -->
+        <form id="formulario_dados_pessoais">
+            <!-- Área (card)-- Dados pessoais(#início)-->
+            <div class="card" id="card_dados_pessoais">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <strong style="float: left;">Dados Pessoais</strong>
+                        </div>
 
-        <!-- Área (card)-- Dados pessoais(#início)-->
-        <div class="card" id="card_dados_pessoais">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col">
-                        <strong style="float: left;">Dados Pessoais</strong>
+                        <div class="col div_btn_edicao" id="div_editar_dados_pessoais" style="float: right;">
+                            <button id="btn_editar_dados_pessoais" type="button"
+                                    class="btn-outline-secondary btns_edicao">
+                                <i id="btn_editar_dados_pessoais"
+                                   class="menu-icon fa fa-pencil"></i>
+                                Editar
+                            </button>
+                        </div>
+
+                        <div class="col" id="div_btns_cancelar_salvar_edicao_dados_pessoais"
+                             style="float: right; display: none;">
+                            <button id="btn_cancelar_edicao_dados_pessoais" type="button"
+                                    class="btn-outline-danger btns_edicao">
+                                <i id="btn_cancelar_edicao_dados_pessoais"
+                                   class="menu-icon fa fa-times"></i>
+                                Sair
+                            </button>
+
+                            <input id="btn_salvar_edicao_dados_pessoais" type="submit"
+                                   class="btn-outline-success btns_edicao" style="margin-right: 5%;">
+
+                        </div>
+
                     </div>
-
-                    <div class="col div_btn_edicao" id="div_editar_dados_pessoais" style="float: right;">
-                        <button id="btn_editar_dados_pessoais"  type="button" class="btn-outline-secondary btns_edicao">
-                            <i id="btn_editar_dados_pessoais"
-                               class="menu-icon fa fa-pencil"></i>
-                            Editar
-                        </button>
-                    </div>
-
-                    <div class="col" id="div_btns_cancelar_salvar_edicao_dados_pessoais" style="float: right; display: none;">
-                        <button id="btn_cancelar_edicao_dados_pessoais"  type="button" class="btn-outline-danger btns_edicao">
-                            <i id="btn_cancelar_edicao_dados_pessoais"
-                               class="menu-icon fa fa-times"></i>
-                            Sair
-                        </button>
-                        <button id="btn_salvar_edicao_dados_pessoais"  type="submit" class="btn-outline-success btns_edicao" style="margin-right: 5%;">
-                            <i id="btn_salvar_edicao_dados_pessoais"
-                               class="menu-icon fa fa-check-square-o"></i>
-                            Salvar
-                        </button>
-                    </div>
-
                 </div>
-            </div>
 
-            <!-- card-body -- Dados pessoais(#início)-->
-            <div class="card-body card-block">
+                <!-- card-body -- Dados pessoais(#início)-->
+                <div class="card-body card-block">
 
-                <!-- formulario dados pessoais(#início) -->
-                <form id="formulario_cadastro_dados_pessoais" name="formulario_cadastro_dados_pessoais">
                     <div class="container" id="dados_pessoais">
+
+                        <input type="hidden" value="dados_pessoais" name="acao">
+                        <input type="hidden" value="<?= $_SESSION['id_user_mql'] ?>" name="id_usuario">
 
                         <!--Nome e sobrenome-->
                         <div class="form-group row">
                             <div class="form-group col-md-6 col-sm-12 ">
                                 <label>Nome</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="nome">
+                                <input type="text" class="form-control form_dados_pessoais" id="nome" name="nome" required>
                             </div>
 
                             <div class="col-md-6 col-sm-12">
                                 <label>Sobrenome</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="sobrenome">
+                                <input type="text" class="form-control form_dados_pessoais" id="sobrenome"
+                                       name="sobrenome" required>
                             </div>
                         </div>
 
@@ -121,12 +126,13 @@ require '../sistema/funcoes/sessao.php'
                         <div class="form-group row">
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Nascimento</label>
-                                <input type="date" class="form-control form_dados_pessoais" id="data_nascimento">
+                                <input type="date" class="form-control form_dados_pessoais" id="data_nascimento"
+                                       name="nascimento" required>
                             </div>
 
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Sexo</label>
-                                <select class="form-control form_dados_pessoais" id="sexo">
+                                <select class="form-control form_dados_pessoais" id="sexo" name="sexo" required>
                                     <option value=""></option>
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
@@ -135,7 +141,8 @@ require '../sistema/funcoes/sessao.php'
 
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control form_dados_pessoais" id="telefone">
+                                <input type="tel" class="form-control form_dados_pessoais" id="telefone"
+                                       name="telefone" required>
                                 <small class="form-text text-muted">Inserir apenas números</small>
                             </div>
 
@@ -145,12 +152,12 @@ require '../sistema/funcoes/sessao.php'
                         <div class="form-group row">
                             <div class="form-group col-md-6 col-sm-12">
                                 <label>RG</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="rg">
+                                <input type="text" class="form-control form_dados_pessoais" id="rg" name="rg" required>
                             </div>
 
                             <div class="col-md-6 col-sm-12">
                                 <label>CPF</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="cpf" name="cpf">
+                                <input type="text" class="form-control form_dados_pessoais" id="cpf" name="cpf" required>
                             </div>
                         </div>
                         <div class="form-group row" id="div_imagem">
@@ -162,142 +169,141 @@ require '../sistema/funcoes/sessao.php'
                         </div>
 
                     </div>
-                </form><!-- formulario dados pessoais(#fim) -->
+        </form><!-- formulario dados pessoais(#fim) -->
 
-            </div><!-- card-body -- Dados pessoais(#fim)-->
+    </div><!-- card-body -- Dados pessoais(#fim)-->
 
-        </div><!-- Área (card) -- Dados pessoais (#fim)-->
+</div><!-- Área (card) -- Dados pessoais (#fim)-->
 
 
-        <!-- Área (card) --Endereço(#início)-->
-        <div class="card" id="card_endereco">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col">
-                        <strong style="float: left;">Endereco</strong>
-                    </div>
+<!-- Área (card) --Endereço(#início)-->
+<div class="card" id="card_endereco">
 
-                    <div class="col div_btn_edicao" id="div_btn_editar_endereco" style="float: right;">
-                        <button id="btn_editar_endereco"  type="button" class="btn-outline-secondary btns_edicao">
-                            <i id="btn_editar_endereco"
-                               class="menu-icon fa fa-pencil"></i>
-                            Editar
-                        </button>
-                    </div>
 
-                    <div class="col" id="div_btns_cancelar_salvar_edicao_endereco" style="float: right; display: none;">
-                        <button id="btn_cancelar_edicao_endereco"  type="button" class="btn-outline-danger btns_edicao">
-                            <i id="btn_cancelar_edicao_endereco"
-                               class="menu-icon fa fa-times"></i>
-                            Sair
-                        </button>
-                        <button id="btn_salvar_edicao_endereco"  type="submit" class="btn-outline-success btns_edicao" style="margin-right: 5%;">
-                            <i id="btn_salvar_edicao_endereco"
-                               class="menu-icon fa fa-check-square-o"></i>
-                            Salvar
-                        </button>
-                    </div>
+    <!-- formulario endereço(#início) -->
+    <form id="formulario_dados_endereco">
+        <input type="hidden" value="dados_endereco" name="acao">
+        <input type="hidden" value="<?= $_SESSION['id_user_mql'] ?>" name="id_usuario">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <strong style="float: left;">Endereco</strong>
+                </div>
+
+                <div class="col div_btn_edicao" id="div_btn_editar_endereco" style="float: right;">
+                    <button id="btn_editar_endereco" type="button" class="btn-outline-secondary btns_edicao">
+                        <i id="btn_editar_endereco"
+                           class="menu-icon fa fa-pencil"></i>
+                        Editar
+                    </button>
+                </div>
+
+                <div class="col" id="div_btns_cancelar_salvar_edicao_endereco" style="float: right; display: none;">
+                    <button id="btn_cancelar_edicao_endereco" type="button" class="btn-outline-danger btns_edicao">
+                        <i id="btn_cancelar_edicao_endereco"
+                           class="menu-icon fa fa-times"></i>
+                        Sair
+                    </button>
+                    <input id="btn_salvar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao"
+                            style="margin-right: 5%;">
+
                 </div>
             </div>
+        </div>
 
-            <!-- card-body -- Endereço(#início)-->
-            <div class="card-body card-block">
+        <!-- card-body -- Endereço(#início)-->
+        <div class="card-body card-block">
 
-                <!-- formulario endereço(#início) -->
-                <form id="formulario_cadastro_endereco">
-                    <div class="container">
-                        <!--CEP-->
-                        <div class="form-group row">
-                            <div class="col-md-4 col-sm-4 col-lg-4">
-                                <label>CEP</label>
-                                <input type="tel" class="form-control form_endereco" id="cep">
-                            </div>
-                        </div>
-
-                        <!--Cidade, estado e país-->
-                        <div class="form-group row">
-                            <div class="form-group col-md-4 col-sm-4 col-lg-4">
-                                <label>País</label>
-                                <select class="form-control" id="pais" disabled="">
-                                    <option value="Brasil">Brasil</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-4 col-sm-4 col-lg-4">
-                                <label>Estado</label>
-                                <select class="form-control form_endereco   " id="estado">
-                                    <option value="">Selecione</option>
-                                    <option value="AC">Acre</option>
-                                    <option value="AL">Alagoas</option>
-                                    <option value="AP">Amapá</option>
-                                    <option value="AM">Amazonas</option>
-                                    <option value="BA">Bahia</option>
-                                    <option value="CE">Ceará</option>
-                                    <option value="DF">Distrito Federal</option>
-                                    <option value="ES">Espirito Santo</option>
-                                    <option value="GO">Goiás</option>
-                                    <option value="MA">Maranhão</option>
-                                    <option value="MS">Mato Grosso do Sul</option>
-                                    <option value="MT">Mato Grosso</option>
-                                    <option value="MG">Minas Gerais</option>
-                                    <option value="PA">Pará</option>
-                                    <option value="PB">Paraíba</option>
-                                    <option value="PR">Paraná</option>
-                                    <option value="PE">Pernambuco</option>
-                                    <option value="PI">Piauí</option>
-                                    <option value="RJ">Rio de Janeiro</option>
-                                    <option value="RN">Rio Grande do Norte</option>
-                                    <option value="RS">Rio Grande do Sul</option>
-                                    <option value="RO">Rondônia</option>
-                                    <option value="RR">Roraima</option>
-                                    <option value="SC">Santa Catarina</option>
-                                    <option value="SP">São Paulo</option>
-                                    <option value="SE">Sergipe</option>
-                                    <option value="TO">Tocantins</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-4 col-sm-4 col-lg-4">
-                                <label>Cidade</label>
-                                <input type="text" class="form-control form_endereco" id="cidade">
-                            </div>
-
-                        </div>
-
-                        <!--Rua, bairro, número-->
-                        <div class="form-group row">
-                            <div class="col-md-4 col-sm-4 col-lg-4">
-                                <label>Bairro</label>
-                                <input type="tel" class="form-control form_endereco" id="bairro">
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-4 col-lg-6">
-                                <label>Rua</label>
-                                <input type="text" class="form-control form_endereco" id="rua">
-                            </div>
-
-                            <div class="form-group col-md-2 col-sm-4 col-lg-2">
-                                <label>Número</label>
-                                <input type="number" class="form-control form_endereco" id="numero">
-                            </div>
-                        </div>
-
-                        <!--Complemento-->
-                        <div class="form-group row">
-                            <div class="form-group col-md12 col-sm-12 col-lg-12">
-                                <label>Complemento</label>
-                                <input type="text" class="form-control form_endereco" id="complemento">
-                            </div>
-                        </div>
-
+            <div class="container">
+                <!--CEP-->
+                <div class="form-group row">
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <label>CEP</label>
+                        <input type="tel" class="form-control form_endereco" id="cep" name="cep" required>
                     </div>
-                </form><!-- formulario endereço(#fim) -->
 
-            </div> <!-- card-body -- Endereço(#fim)-->
+                    <div hidden class="form-group col-md-4 col-sm-4 col-lg-4">
+                        <label>País</label>
+                        <select  class="form-control" id="pais"  name="pais" required>
+                            <option value="Brasil" selected>Brasil</option>
+                        </select>
+                    </div>
 
-        </div> <!-- Área (card) --Endereço(#fim)-->
+                    <div class="form-group col-md-4 col-sm-4 col-lg-4">
+                        <label>Estado</label>
+                        <select class="form-control form_endereco   " id="estado" name="estado" required>
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
 
-    </div><!-- Área de cadastro (#fim)-->
+                    <div class="form-group col-md-4 col-sm-4 col-lg-4">
+                        <label>Cidade</label>
+                        <input type="text" class="form-control form_endereco" id="cidade" name="cidade" required>
+                    </div>
+
+                </div>
+
+                <!--Rua, bairro, número-->
+                <div class="form-group row">
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <label>Bairro</label>
+                        <input type="tel" class="form-control form_endereco" id="bairro" name="bairro" required>
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-4 col-lg-6">
+                        <label>Rua</label>
+                        <input type="text" class="form-control form_endereco" id="rua" name="rua" required>
+                    </div>
+
+                    <div class="form-group col-md-2 col-sm-4 col-lg-2">
+                        <label>Número</label>
+                        <input type="number" class="form-control form_endereco" id="numero" name="numero" required>
+                    </div>
+                </div>
+
+                <!--Complemento-->
+                <div class="form-group row">
+                    <div class="form-group col-md12 col-sm-12 col-lg-12">
+                        <label>Complemento</label>
+                        <input type="text" class="form-control form_endereco" id="complemento" name="complemento" required>
+                    </div>
+                </div>
+
+            </div>
+    </form><!-- formulario endereço(#fim) -->
+
+</div> <!-- card-body -- Endereço(#fim)-->
+
+</div> <!-- Área (card) --Endereço(#fim)-->
+
+</div><!-- Área de cadastro (#fim)-->
 
 
 </body>

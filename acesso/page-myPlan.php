@@ -52,7 +52,7 @@ require '../sistema/funcoes/sessao.php'
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Meu Plano</h1>
+                    <h1>Minha Página</h1>
                 </div>
             </div>
         </div>

@@ -1,78 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
     //Iniciar inputs apagados
     $('.form_dados_pessoais').prop('disabled', true);
     $('.form_endereco').prop('disabled', true);
-
-    //Btn dados pessoais(#início)
-    $('#btn_editar_dados_pessoais').click(function () {
-        //Post the form data serialized for the proper formatting
-        console.log("Editar dados pessoais");
-        $('#div_editar_dados_pessoais').css('display','none');
-        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display','inline');
-
-        $('.form_dados_pessoais').prop('disabled', false); //Habilita os inputs de dados pessoais
-    });
-
-    $("#btn_cancelar_edicao_dados_pessoais").click(function () {
-        $('.form_dados_pessoais').prop('disabled', true); //Desabilita os inputs de dados pessoais
-
-        $('#div_editar_dados_pessoais').css('display','inline');
-        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display','none');
-
-    });
-
-    $("#btn_salvar_edicao_dados_pessoais").click(function () {
-        $('.form_dados_pessoais').prop('disabled', true); //Desabilita os inputs de dados pessoais
-
-        $('#div_editar_dados_pessoais').css('display','inline');
-        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display','none');
-
-        $json_dados_pessoais = {
-            nome: nome.value,
-            sobrenome: sobrenome.value,
-            cpf: cpf.value,
-            data_nascimento: data_nascimento.value,
-            rg: rg.value,
-            telefone: telefone.value,
-            sexo: sexo.value
-        }
-
-        $.post("../sistema/funcoes/cadastro_dados_usuario.php", $json_dados_pessoais, function (resposta) {
-            console.log(resposta)
-        });
-
-    });
-    //Btn dados pessoais(#fim)
-
-
-    //Botões endereço(#início)
-    $("#btn_editar_endereco").click(function () {
-        //Post the form data serialized for the proper formatting
-        console.log("Editar endereço");
-        $('#div_btn_editar_endereco').css('display','none');
-        $('#div_btns_cancelar_salvar_edicao_endereco').css('display','inline');
-
-        $('.form_endereco').prop('disabled', false); //Habilita os inputs de endereço
-    });
-
-    $("#btn_cancelar_edicao_endereco").click(function () {
-        $('.form_endereco').prop('disabled', true); //Desabilita os inputs de endereço
-
-        $('#div_btn_editar_endereco').css('display','inline');
-        $('#div_btns_cancelar_salvar_edicao_endereco').css('display','none');
-    });
-
-    $("#btn_salvar_edicao_endereco").click(function () {
-        $('.form_endereco').prop('disabled', true); //Desabilita os inputs de endereço
-
-        $('#div_btn_editar_endereco').css('display','inline');
-        $('#div_btns_cancelar_salvar_edicao_endereco').css('display','none');
-
-
-
-    });
-    //Botões endereço(#fim)
-
 
     //Preenchimento CEP
     function limpa_formulário_cep() {
@@ -85,7 +14,7 @@ $(document).ready(function() {
     }
 
     //Quando o campo cep perde o foco.
-    $("#cep").blur(function() {
+    $("#cep").blur(function () {
 
         //Nova variável "cep" somente com dígitos.
         var cep = $(this).val().replace(/\D/g, '');
@@ -97,7 +26,7 @@ $(document).ready(function() {
             var validacep = /^[0-9]{8}$/;
 
             //Valida o formato do CEP.
-            if(validacep.test(cep)) {
+            if (validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
                 $("#rua").val("...");
@@ -107,7 +36,7 @@ $(document).ready(function() {
                 $("#ibge").val("...");
 
                 //Consulta o webservice viacep.com.br/
-                $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
@@ -136,3 +65,82 @@ $(document).ready(function() {
         }
     });
 });
+
+
+$('body').on('submit', '#formulario_dados_pessoais', function (e) {
+    //impedi o submit automático
+    e.preventDefault();
+
+    //chamo pelo método post
+    $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
+        if (data == 0) {
+            alert('Erro ao registrar dados!')
+        }
+        else {
+            alert('Dados registrados com sucesso!');
+            location.reload();
+        }
+    });
+});
+
+
+function alterna_edicao(acao) {
+    if (acao == 'habilitar_pessoais') {
+        $('.form_dados_pessoais').prop('disabled', false);
+        $('#div_editar_dados_pessoais').css('display', 'none');
+        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display', 'inline');
+    } else if (acao == 'desabilitar_pessoais') {
+        $('.form_dados_pessoais').prop('disabled', true);
+        $('#div_editar_dados_pessoais').css('display', 'inline');
+        $('#div_btns_cancelar_salvar_edicao_dados_pessoais').css('display', 'none');
+    } else if (acao == 'habilitar_endereco') {
+        $('.form_endereco').prop('disabled', false); //Habilita os inputs de endereço
+        $('#div_btn_editar_endereco').css('display', 'none');
+        $('#div_btns_cancelar_salvar_edicao_endereco').css('display', 'inline');
+
+    } else if (acao == 'desabilitar_endereco') {
+        $('.form_endereco').prop('disabled', true); //Desabilita os inputs de endereço
+        $('#div_btn_editar_endereco').css('display', 'inline');
+        $('#div_btns_cancelar_salvar_edicao_endereco').css('display', 'none');
+    }
+}
+
+
+//Btn dados pessoais(#início)
+$('#btn_editar_dados_pessoais').on('click', function () {
+
+    alterna_edicao('habilitar_pessoais');
+
+});
+
+$("#btn_cancelar_edicao_dados_pessoais").on('click', function () {
+    alterna_edicao('desabilitar_pessoais');
+});
+
+
+$('body').on('submit', '#formulario_dados_endereco', function (e) {
+    //impedi o submit automático
+    e.preventDefault();
+
+    //chamo pelo método post
+    $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
+        if (data == 0) {
+            alert('Erro ao editar endereço!');
+        }
+        else {
+            alert('Dados registrados com sucesso!');
+            location.reload();
+        }
+    });
+});
+
+$("#btn_editar_endereco").on('click', function () {
+
+    alterna_edicao('habilitar_endereco');
+
+});
+
+$("#btn_cancelar_edicao_endereco").on('click', function () {
+    alterna_edicao('desabilitar_endereco');
+});
+

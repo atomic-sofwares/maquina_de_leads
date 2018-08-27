@@ -29,7 +29,7 @@ require '../sistema/funcoes/sessao.php'
                     <a href="page-financial.php"> <i class="menu-icon fa fa-dollar"></i>Financeiro </a>
                 </li>
                 <li class="<?= $_SERVER['REQUEST_URI'] == '/acesso/page-myPlan.php' ? 'active' : '' ?>">
-                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Meu Plano </a>
+                    <a href="page-myPlan.php"> <i class="menu-icon fa fa-fire"></i>Minha Página </a>
                 </li>
                 <li>
                     <a href="" class="logOut" id="logOut1"> <i class="menu-icon fa fa-power-off" id="logOut1"></i>Sair
