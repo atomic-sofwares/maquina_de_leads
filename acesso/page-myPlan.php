@@ -34,6 +34,7 @@ require '../sistema/funcoes/sessao.php'
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <link rel="stylesheet" href="../css/page-myProfile.css">
 
 </head>
 <body>
@@ -41,12 +42,12 @@ require '../sistema/funcoes/sessao.php'
 
 <!-- Left Panel -->
 
-<?php require_once 'menu_lateral.php'?>
+<?php require_once 'menu_lateral.php' ?>
 
 <!-- Right Panel -->
 
 <div id="right-panel" class="right-panel">
-    <?php require_once 'header.php'?>
+    <?php require_once 'header.php' ?>
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
@@ -57,6 +58,65 @@ require '../sistema/funcoes/sessao.php'
             </div>
         </div>
     </div>
+
+    <!--Área das páginas (#início) -->
+    <div class="login-form">
+        <!-- formulario dados pessoais(#início) -->
+        <form>
+            <!-- Área (card)-- Dados pessoais(#início)-->
+            <div class="card" id="card_dados_pessoais">
+                <!-- card-body -- Dados pessoais(#início)-->
+                <div class="card-body card-block">
+
+                    <div class="container" id="dados_pessoais">
+
+                        <div class="row">
+                            <!-- Nome/número página -->
+                            <div class="col-md-3">
+                                <h3>Page 1</h3>
+                            </div>
+
+                            <!-- Visitas e link cópia -->
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <label>Nº visitas</label>
+                                </div>
+                                <div class="row">
+                                    <button id="btn_cancelar_edicao_dados_pessoais" type="button"
+                                            class="btn-outline-danger btns_edicao">
+                                        Link cópia
+                                        <i id="btn_cancelar_edicao_dados_pessoais"
+                                           class="menu-icon fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ícones -->
+                            <div class="col-md-1">
+                                <div class="row">
+                                    <button id="btn_cancelar_edicao_dados_pessoais" type="button"
+                                            class="btn-outline-danger btns_edicao">
+                                        <i id="btn_cancelar_edicao_dados_pessoais"
+                                           class="menu-icon fa fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="row">
+                                    <button id="btn_cancelar_edicao_dados_pessoais" type="button"
+                                            class="btn-outline-danger btns_edicao">
+                                        <i id="btn_cancelar_edicao_dados_pessoais"
+                                           class="menu-icon fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        </form><!-- formulario dados pessoais(#fim) -->
+
+    </div><!-- card-body -- Dados pessoais(#fim)-->
+
+</div><!-- Área (card) -- Dados pessoais (#fim)-->
+    <!--Área das páginas (#fim) -->
 </div>
 
 <!-- Right Panel -->
@@ -75,24 +135,7 @@ require '../sistema/funcoes/sessao.php'
 <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
 <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
 <script src="../js/dashboard.js"></script>
-<script>
-    (function ($) {
-        "use strict";
 
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: null,
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#1de9b6',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#1de9b6', '#03a9f5'],
-            normalizeFunction: 'polynomial'
-        });
-    })(jQuery);
-</script>
 
 </body>
 </html>
