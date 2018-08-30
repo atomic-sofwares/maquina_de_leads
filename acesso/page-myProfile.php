@@ -102,8 +102,8 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                                 Sair
                             </button>
 
-                            <button id="btn_cancelar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao" style="margin-right: 4%;">
-                                <i id="btn_cancelar_edicao_endereco"
+                            <button id="btn_salvar_edicao_dados_pessoais" type="submit" class="btn-outline-success btns_edicao" style="margin-right: 4%;">
+                                <i id="btn_salvar_edicao_dados_pessoais"
                                    class="menu-icon fa fa-check-square-o"></i>
                                 Salvar
                             </button>
@@ -220,8 +220,8 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                         Sair
                     </button>
 
-                    <button id="btn_cancelar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao" style="margin-right: 4%;">
-                        <i id="btn_cancelar_edicao_endereco"
+                    <button id="btn_salvar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao" style="margin-right: 4%;">
+                        <i id="btn_salvar_edicao_endereco"
                            class="menu-icon fa fa-check-square-o"></i>
                         Salvar
                     </button>
