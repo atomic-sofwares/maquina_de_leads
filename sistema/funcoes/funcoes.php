@@ -63,7 +63,17 @@ function func_inserir_dados_pessoais_update($dados){
 }
 
 function func_inserir_dados_endereco_update($dados){
+    global $conn;
 
+    $sql = "UPDATE quero_sucesso.TB_Endereco SET cep ='" . $dados['cep'] . "', estado ='" . $dados['estado'] . "' 
+    , cidade ='" . $dados['cidade'] . "', bairro ='" . $dados['bairro'] . "', rua ='" . $dados['rua'] . "'
+    , numero ='" . $dados['numero'] . "', complemento ='" . $dados['complemento'] . "' 
+    WHERE id_usuario ='" . $dados['id_usuario'] . "'";
+
+    $sql_executar = $conn->prepare($sql);
+    $sql_executar->execute();
+
+    return $sql_executar;
 }
 
 function func_alterar_imagem_usuario($link_imagem, $id_usuario)

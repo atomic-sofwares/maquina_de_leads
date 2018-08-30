@@ -71,44 +71,50 @@ require '../sistema/funcoes/sessao.php'
                     <div class="container" id="dados_pessoais">
 
                         <div class="row">
-                            <!-- Nome/número página -->
-                            <div class="col-md-3">
-                                <h3>Page 1</h3>
-                            </div>
+                            <!-- Página 1 (#início) -->
 
-                            <!-- Visitas e link cópia -->
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <label>Nº visitas</label>
+                                <!-- Nome/número página -->
+                                <div class="col-md-3">
+                                    <h3>Page 1</h3>
                                 </div>
-                                <div class="row">
-                                    <button id="btn_cancelar_edicao_dados_pessoais" type="button"
-                                            class="btn-outline-danger btns_edicao">
-                                        Link cópia
-                                        <i id="btn_cancelar_edicao_dados_pessoais"
-                                           class="menu-icon fa fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- ícones -->
-                            <div class="col-md-1">
-                                <div class="row">
-                                    <button id="btn_cancelar_edicao_dados_pessoais" type="button"
-                                            class="btn-outline-danger btns_edicao">
-                                        <i id="btn_cancelar_edicao_dados_pessoais"
-                                           class="menu-icon fa fa-times"></i>
-                                    </button>
+                                <!-- Visitas e link cópia -->
+                                <div class="col-md-8" style="text-align: center;">
+                                    <div class="row">
+                                        <label>Nº visitas</label>
+                                    </div>
+                                    <div class="row">
+                                        <a href="#">
+                                            Link cópia
+                                            <i id="btn_copiar"
+                                               class="menu-icon fa fa-copy"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <button id="btn_cancelar_edicao_dados_pessoais" type="button"
-                                            class="btn-outline-danger btns_edicao">
-                                        <i id="btn_cancelar_edicao_dados_pessoais"
-                                           class="menu-icon fa fa-times"></i>
-                                    </button>
+
+                                <!-- ícones -->
+                                <div class="col-md-1" style="float: right;">
+                                    <div class="row" >
+                                        <button id="btn_visualizar" type="button"
+                                                class="btn-outline-secondary btns_edicao">
+                                            <i id="btn_visualizar"
+                                               class="menu-icon fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="row">
+                                        <button id="btn_cadastrados" type="button"
+                                                class="btn-outline-secondary btns_edicao">
+                                            <i id="btn_cadastrados"
+                                               class="menu-icon fa fa-group"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                          <!-- Página 1 (#fim) -->
+
+
+
+
+
 
                     </div>
         </form><!-- formulario dados pessoais(#fim) -->

@@ -141,10 +141,26 @@ $('body').on('submit', '#formulario_dados_endereco', function (e) {
     //chamo pelo método post
     $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
         if (data == 0) {
+            alert('Erro ao cadastrar endereço!');
+        }
+        else {
+            alert('Endereço registrado com sucesso!');
+            location.reload();
+        }
+    });
+});
+
+$('body').on('submit', '#formulario_dados_endereco_update', function (e) {
+    //impedi o submit automático
+    e.preventDefault();
+
+    //chamo pelo método post
+    $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
+        if (data == 0) {
             alert('Erro ao editar endereço!');
         }
         else {
-            alert('Endereço registrados com sucesso!');
+            alert('Endereço alterado com sucesso!');
             location.reload();
         }
     });

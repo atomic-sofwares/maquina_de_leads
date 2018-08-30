@@ -21,6 +21,7 @@ switch ($acao) {
         func_inserir_dados_pessoais($_POST);
         echo '1';
         break;
+
     case 'novo_usuario':
         if ($_POST["email"] == $_POST["confirma_email"] and $_POST["senha"] == $_POST["confirma_senha"]) {
 
@@ -38,6 +39,11 @@ switch ($acao) {
 
     case 'dados_endereco':
         func_inserir_dados_endereco($_POST);
+        echo'1';
+        break;
+
+    case 'dados_endereco_update':
+        func_inserir_dados_endereco_update($_POST);
         echo'1';
         break;
 }

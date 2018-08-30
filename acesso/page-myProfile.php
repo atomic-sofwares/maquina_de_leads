@@ -102,8 +102,11 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                                 Sair
                             </button>
 
-                            <input id="btn_salvar_edicao_dados_pessoais" type="submit"
-                                   class="btn-outline-success btns_edicao" style="margin-right: 5%;">
+                            <button id="btn_cancelar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao" style="margin-right: 4%;">
+                                <i id="btn_cancelar_edicao_endereco"
+                                   class="menu-icon fa fa-check-square-o"></i>
+                                Salvar
+                            </button>
 
                         </div>
 
@@ -140,10 +143,11 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                                        name="nascimento" required>
                             </div>
 
-                            <div class="form-group col-md-4 col-sm-4 col-lg-4">
+                            <div class="form-group col-md-4 col-sm-4 col-lg-4" id="div_sexo">
                                 <label>Sexo</label>
                                 <select class="form-control form_dados_pessoais" id="sexo" name="sexo" required>
-                                    <option value=""><?= $dados_pessoais['sexo'] ?></option>
+                                    <option value="<?= $dados_pessoais['sexo'] == 'Masculino' ? 'Masculino':'Feminino'?>"> <?= $dados_pessoais['sexo'] == 'Masculino' ? 'Masculino':'Feminino' ?></option>
+                                    <option value=""></option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
                                 </select>
@@ -215,8 +219,15 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                            class="menu-icon fa fa-times"></i>
                         Sair
                     </button>
-                    <input id="btn_salvar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao"
-                            style="margin-right: 5%;">
+
+                    <button id="btn_cancelar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao" style="margin-right: 4%;">
+                        <i id="btn_cancelar_edicao_endereco"
+                           class="menu-icon fa fa-check-square-o"></i>
+                        Salvar
+                    </button>
+<!--                    <input id="btn_salvar_edicao_endereco" type="submit" class="btn-outline-success btns_edicao" value="Salvar"-->
+<!--                            -->
+<!--                    <i id="btn_cancelar_edicao_endereco" class="menu-icon fa fa-times"></i>-->
 
                 </div>
             </div>
@@ -247,34 +258,34 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                     <div class="form-group col-md-4 col-sm-4 col-lg-4">
                         <label>Estado</label>
                         <select class="form-control form_endereco" id="estado" name="estado" required>
-                            <option value=""><?= $dados_endereco['estado'] ?></option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espirito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
+                            <option value="<?= $dados_endereco['estado'] ?>"><?= $dados_endereco['estado'] ?></option>
+                            <option value="Acre">Acre</option>
+                            <option value="Alagoas">Alagoas</option>
+                            <option value="Amapá">Amapá</option>
+                            <option value="Amazonas">Amazonas</option>
+                            <option value="Bahia">Bahia</option>
+                            <option value="Ceará">Ceará</option>
+                            <option value="Distrito Federal">Distrito Federal</option>
+                            <option value="Espirito Santo">Espirito Santo</option>
+                            <option value="Goiás">Goiás</option>
+                            <option value="Maranhão">Maranhão</option>
+                            <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                            <option value="Mato Grosso">Mato Grosso</option>
+                            <option value="Minas Gerais">Minas Gerais</option>
+                            <option value="Pará">Pará</option>
+                            <option value="Paraíba">Paraíba</option>
+                            <option value="Paraná">Paraná</option>
+                            <option value="Pernambuco">Pernambuco</option>
+                            <option value="Piauí">Piauí</option>
+                            <option value="io de Janeiro">Rio de Janeiro</option>
+                            <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                            <option value="Rondônia">Rondônia</option>
+                            <option value="Roraima">Roraima</option>
+                            <option value="Santa Catarina">Santa Catarina</option>
+                            <option value="São Paulo">São Paulo</option>
+                            <option value="Sergipe">Sergipe</option>
+                            <option value="Tocantins">Tocantins</option>
                         </select>
                     </div>
 
@@ -290,7 +301,7 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
                 <div class="form-group row">
                     <div class="col-md-4 col-sm-4 col-lg-4">
                         <label>Bairro</label>
-                        <input type="tel" class="form-control form_endereco" id="bairro" value="<?= $dados_endereco['bairro'] ?>"
+                        <input type="text" class="form-control form_endereco" id="bairro" value="<?= $dados_endereco['bairro'] ?>"
                                name="bairro" required>
                     </div>
 
@@ -302,7 +313,7 @@ $total_dados_endereco = $sql_dados_endereco->rowCount();
 
                     <div class="form-group col-md-2 col-sm-4 col-lg-2">
                         <label>Número</label>
-                        <input type="number" class="form-control form_endereco" id="numero" value="<?= $dados_endereco['numero'] ?>"
+                        <input type="text" class="form-control form_endereco" id="numero" value="<?= $dados_endereco['numero'] ?>"
                                name="numero">
                     </div>
                 </div>
