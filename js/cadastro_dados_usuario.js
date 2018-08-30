@@ -74,10 +74,11 @@ $('body').on('submit', '#formulario_dados_pessoais', function (e) {
     //chamo pelo método post
     $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
         if (data == 0) {
-            alert('Erro ao registrar dados!')
+            alert('Erro ao registrar dados pessoais!')
         }
         else {
-            alert('Dados registrados com sucesso!');
+
+            alert('Dados pessoais registrados com sucesso!');
             location.reload();
         }
     });
@@ -90,10 +91,10 @@ $('body').on('submit', '#formulario_dados_pessoais_update', function (e) {
     //chamo pelo método post
     $.post("../sistema/funcoes/cadastro.php", $(this).serialize(), function (data) {
         if (data == 0) {
-            alert('Erro ao registrar dados!')
+            alert('Erro ao alterar dados pessoais!')
         }
         else {
-            alert('Dados registrados com sucesso!');
+            alert('Dados pessoais alterados com sucesso!');
             location.reload();
         }
     });
@@ -143,7 +144,7 @@ $('body').on('submit', '#formulario_dados_endereco', function (e) {
             alert('Erro ao editar endereço!');
         }
         else {
-            alert('Dados registrados com sucesso!');
+            alert('Endereço registrados com sucesso!');
             location.reload();
         }
     });

@@ -6,7 +6,6 @@
  * Time: 15:59
  */
 require 'funcoes.php';
-
 //este é o correto
 
 

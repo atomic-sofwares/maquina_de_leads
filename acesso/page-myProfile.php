@@ -4,8 +4,11 @@ require '../sistema/funcoes/funcoes.php';
 
 $sql_dados_pessoais = func_buscar_dados_pessoais($_SESSION['id_user_mql']);
 $dados_pessoais = $sql_dados_pessoais->fetchAll(PDO::FETCH_ASSOC)[0];
+$total_dados_pessoais = $sql_dados_pessoais->rowCount();
 
-$total = $sql_dados_pessoais->rowCount();
+$sql_dados_endereco = func_buscar_dados_endereco($_SESSION['id_user_mql']);
+$dados_endereco = $sql_dados_endereco->fetchAll(PDO::FETCH_ASSOC)[0];
+$total_dados_endereco = $sql_dados_endereco->rowCount();
 
 ?>
 <!doctype html>
@@ -72,7 +75,7 @@ $total = $sql_dados_pessoais->rowCount();
     <!-- Área de cadastro (#início)-->
     <div class="login-form">
         <!-- formulario dados pessoais(#início) -->
-        <form id="<?= $total>0 ? 'formulario_dados_pessoais_update':'formulario_dados_pessoais'  ?>">
+        <form id="<?= $total_dados_pessoais>0 ? 'formulario_dados_pessoais_update':'formulario_dados_pessoais'  ?>">
             <!-- Área (card)-- Dados pessoais(#início)-->
             <div class="card" id="card_dados_pessoais">
                 <div class="card-header">
@@ -112,7 +115,7 @@ $total = $sql_dados_pessoais->rowCount();
 
                     <div class="container" id="dados_pessoais">
 
-                        <input type="hidden" value="<?= $total>0 ? 'dados_pessoais_update':'dados_pessoais'  ?>" name="acao">
+                        <input type="hidden" value="<?= $total_dados_pessoais>0 ? 'dados_pessoais_update':'dados_pessoais'  ?>" name="acao">
                         <input type="hidden" value="<?= $_SESSION['id_user_mql'] ?>" name="id_usuario">
 
                         <!--Nome e sobrenome-->
@@ -133,22 +136,22 @@ $total = $sql_dados_pessoais->rowCount();
                         <div class="form-group row">
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Nascimento</label>
-                                <input type="date" class="form-control form_dados_pessoais" id="data_nascimento"
+                                <input type="date" class="form-control form_dados_pessoais" id="data_nascimento" value="<?= $dados_pessoais['data_nascimento'] ?>"
                                        name="nascimento" required>
                             </div>
 
                             <div class="form-group col-md-4 col-sm-4 col-lg-4">
                                 <label>Sexo</label>
                                 <select class="form-control form_dados_pessoais" id="sexo" name="sexo" required>
-                                    <option value=""></option>
-                                    <option value="M">Masculino</option>
-                                    <option value="F">Feminino</option>
+                                    <option value=""><?= $dados_pessoais['sexo'] ?></option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
                                 </select>
                             </div>
 
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control form_dados_pessoais" id="telefone"
+                                <input type="tel" class="form-control form_dados_pessoais" id="telefone" value="<?= $dados_pessoais['telefone'] ?>"
                                        name="telefone" required>
                                 <small class="form-text text-muted">Inserir apenas números</small>
                             </div>
@@ -159,12 +162,14 @@ $total = $sql_dados_pessoais->rowCount();
                         <div class="form-group row">
                             <div class="form-group col-md-6 col-sm-12">
                                 <label>RG</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="rg" name="rg" required>
+                                <input type="text" class="form-control form_dados_pessoais" id="rg" value="<?= $dados_pessoais['rg'] ?>"
+                                       name="rg" required>
                             </div>
 
                             <div class="col-md-6 col-sm-12">
                                 <label>CPF</label>
-                                <input type="text" class="form-control form_dados_pessoais" id="cpf" name="cpf" required>
+                                <input type="text" class="form-control form_dados_pessoais" id="cpf" value="<?= $dados_pessoais['cpf'] ?>"
+                                       name="cpf" required>
                             </div>
                         </div>
                         <div class="form-group row" id="div_imagem">
@@ -185,12 +190,11 @@ $total = $sql_dados_pessoais->rowCount();
 
 <!-- Área (card) --Endereço(#início)-->
 <div class="card" id="card_endereco">
-
-
     <!-- formulario endereço(#início) -->
-    <form id="formulario_dados_endereco">
-        <input type="hidden" value="dados_endereco" name="acao">
-        <input type="hidden" value="<?= $_SESSION['id_user_mql'] ?>" name="id_usuario">
+    <form id="<?= $total_dados_endereco>0 ? 'formulario_dados_endereco_update':'formulario_dados_endereco'  ?>">
+<!--        <input type="hidden" value="dados_endereco" name="acao">-->
+<!--        <input type="hidden" value="--><?//= $_SESSION['id_user_mql'] ?><!--" name="id_usuario">-->
+
         <div class="card-header">
             <div class="row">
                 <div class="col">
@@ -221,12 +225,16 @@ $total = $sql_dados_pessoais->rowCount();
         <!-- card-body -- Endereço(#início)-->
         <div class="card-body card-block">
 
-            <div class="container">
+            <div class="container" id="dados_endereco">
+                <input type="hidden" value="<?= $total_dados_endereco>0 ? 'dados_endereco_update':'dados_endereco'  ?>" name="acao">
+                <input type="hidden" value="<?= $_SESSION['id_user_mql'] ?>" name="id_usuario">
+
                 <!--CEP-->
                 <div class="form-group row">
                     <div class="col-md-4 col-sm-4 col-lg-4">
                         <label>CEP</label>
-                        <input type="tel" class="form-control form_endereco" id="cep" name="cep" required>
+                        <input type="tel" class="form-control form_endereco" id="cep" value="<?= $dados_endereco['cep'] ?>"
+                               name="cep" required>
                     </div>
 
                     <div hidden class="form-group col-md-4 col-sm-4 col-lg-4">
@@ -238,8 +246,8 @@ $total = $sql_dados_pessoais->rowCount();
 
                     <div class="form-group col-md-4 col-sm-4 col-lg-4">
                         <label>Estado</label>
-                        <select class="form-control form_endereco   " id="estado" name="estado" required>
-                            <option value="">Selecione</option>
+                        <select class="form-control form_endereco" id="estado" name="estado" required>
+                            <option value=""><?= $dados_endereco['estado'] ?></option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
@@ -272,7 +280,8 @@ $total = $sql_dados_pessoais->rowCount();
 
                     <div class="form-group col-md-4 col-sm-4 col-lg-4">
                         <label>Cidade</label>
-                        <input type="text" class="form-control form_endereco" id="cidade" name="cidade" required>
+                        <input type="text" class="form-control form_endereco" id="cidade" value="<?= $dados_endereco['cidade'] ?>"
+                               name="cidade" required>
                     </div>
 
                 </div>
@@ -281,17 +290,20 @@ $total = $sql_dados_pessoais->rowCount();
                 <div class="form-group row">
                     <div class="col-md-4 col-sm-4 col-lg-4">
                         <label>Bairro</label>
-                        <input type="tel" class="form-control form_endereco" id="bairro" name="bairro" required>
+                        <input type="tel" class="form-control form_endereco" id="bairro" value="<?= $dados_endereco['bairro'] ?>"
+                               name="bairro" required>
                     </div>
 
                     <div class="form-group col-md-6 col-sm-4 col-lg-6">
                         <label>Rua</label>
-                        <input type="text" class="form-control form_endereco" id="rua" name="rua" required>
+                        <input type="text" class="form-control form_endereco" id="rua" value="<?= $dados_endereco['rua'] ?>"
+                               name="rua" required>
                     </div>
 
                     <div class="form-group col-md-2 col-sm-4 col-lg-2">
                         <label>Número</label>
-                        <input type="number" class="form-control form_endereco" id="numero" name="numero" required>
+                        <input type="number" class="form-control form_endereco" id="numero" value="<?= $dados_endereco['numero'] ?>"
+                               name="numero">
                     </div>
                 </div>
 
@@ -299,7 +311,8 @@ $total = $sql_dados_pessoais->rowCount();
                 <div class="form-group row">
                     <div class="form-group col-md12 col-sm-12 col-lg-12">
                         <label>Complemento</label>
-                        <input type="text" class="form-control form_endereco" id="complemento" name="complemento" required>
+                        <input type="text" class="form-control form_endereco" id="complemento" value="<?= $dados_endereco['complemento'] ?>"
+                               name="complemento" required>
                     </div>
                 </div>
 

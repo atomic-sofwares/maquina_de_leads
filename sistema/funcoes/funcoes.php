@@ -31,9 +31,6 @@ function func_inserir_dados_pessoais($dados)
     return $sql_executar;
 }
 
-function func_inserir_dados_pessoais_update($dados){
-
-}
 
 function func_inserir_dados_endereco($dados)
 {
@@ -47,9 +44,26 @@ function func_inserir_dados_endereco($dados)
     $sql_executar = $conn->prepare($sql);
     $sql_executar->execute();
 
-    var_dump($sql_executar);
+//    var_dump($sql_executar);
 
     return $sql_executar;
+}
+function func_inserir_dados_pessoais_update($dados){
+    global $conn;
+
+    $sql = "UPDATE quero_sucesso.TB_Dados_Pessoais SET nome ='" . $dados['nome'] . "', sobrenome ='" . $dados['sobrenome'] . "' 
+    , data_nascimento ='" . $dados['nascimento'] . "', cpf ='" . $dados['cpf'] . "', rg ='" . $dados['rg'] . "'
+    , telefone ='" . $dados['telefone'] . "', sexo ='" . $dados['sexo'] . "'
+     WHERE id_usuario ='" . $dados['id_usuario'] . "'";
+
+    $sql_executar = $conn->prepare($sql);
+    $sql_executar->execute();
+
+    return $sql_executar;
+}
+
+function func_inserir_dados_endereco_update($dados){
+
 }
 
 function func_alterar_imagem_usuario($link_imagem, $id_usuario)
@@ -135,6 +149,19 @@ function func_buscar_dados_pessoais($id_usuario)
     global $conn;
 
     $sql = "SELECT * FROM quero_sucesso.TB_Dados_Pessoais
+    WHERE id_usuario ='" . $id_usuario . "'";
+
+    $sql_executar = $conn->prepare($sql);
+    $sql_executar->execute();
+
+    return $sql_executar;
+}
+
+function func_buscar_dados_endereco($id_usuario)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM quero_sucesso.TB_Endereco
     WHERE id_usuario ='" . $id_usuario . "'";
 
     $sql_executar = $conn->prepare($sql);
